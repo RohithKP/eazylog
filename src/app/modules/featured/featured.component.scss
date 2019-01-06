@@ -1,0 +1,115 @@
+@import 'src/variables.scss';
+#featured {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .header-title {
+        color: #646464;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .featured-wrapper {
+        margin-top: 10px;
+        .card {
+            border : 0 !important;
+            margin-bottom: 30px;
+            padding: 20px 15px;
+            padding-top: 0;
+            cursor: pointer;
+            &:hover {
+                -webkit-box-shadow: 0px 1px 10px 0px rgba(205, 214, 222, 0.75);
+                -moz-box-shadow: 0px 1px 10px 0px rgba(205, 214, 222, 0.75);
+                box-shadow: 0px 1px 10px 0px rgba(205, 214, 222, 0.75);
+            }
+            img {
+                height: 300px;
+                margin-bottom: 10px;
+            }
+            .title {
+                color : rgba(0, 0, 0, 0.6);
+                font-size: 18px;
+                @media #{$min-desktop} {
+                    color: #fff;
+                }
+            }
+            .category {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                z-index: 3;
+                background-color: #fcaf01;
+                padding: 4px 15px;
+                color: #FFFFFF;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                background: rgba(0, 0, 0, 0);
+                transition: background 0.5s ease;
+              }
+            .card-image:hover {
+                img {
+                    opacity: 0.3
+                }
+                .overlay {
+                    display: block;
+                    background: rgba(0, 0, 0, .3);
+                }
+                .link-hover {
+                    display : inline-block;
+                }
+            }
+            .link-hover {
+                position: absolute;
+                top: 150px;
+                left: 150px;
+                line-height: 3.6;
+                display: none;
+                color: #FFFFFF;
+                height: 50px;
+                width: 50px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                border-radius: 50%;
+                background-color: #139e81;
+                -webkit-transition: all 0.5s ease-out;
+                -moz-transition: all 0.5s ease-out;
+                -ms-transition: all 0.5s ease-out;
+                -o-transition: all 0.5s ease-out;
+                transition: all 0.5s ease-out;
+                &:after {
+                    content: '\f06e';
+                    font-family: FontAwesome;
+                    position: relative;
+                    top: -4px;
+
+                }
+                &:hover {
+                    background : #fff;
+                    color: #000;
+                }
+            }
+            .place, .contact {
+                color: #c4c4c4;
+            }
+            .contact {
+                &:before {
+                    content: '\f095 ';
+                    font-family: FontAwesome;
+                    margin-right: 5px;
+                    position: relative;
+                    left: 0px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}

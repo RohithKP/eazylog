@@ -1,2 +1,7 @@
 @import 'variables';
 @import "~font-awesome/css/font-awesome.css";
+body {
+    background-color: rgba(196, 196, 196, 0.1);
+    max-width: 100%;
+    overflow-x: hidden;
+}
