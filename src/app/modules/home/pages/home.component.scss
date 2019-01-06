@@ -1,14 +1,209 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-section {
-    margin: 20px auto;
-    .card-columns {
-        @include media-breakpoint-only(lg) {
-          column-count: 4;
-        }
-        @include media-breakpoint-only(xl) {
-          column-count: 5;
-        }
-      }
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.main-search-input-wrap {
+  max-width: 900px;
+  margin: 0px auto;
+  position: relative;
 }
+
+.main-search-container {
+  max-width: 1224px;
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.main-search-input {
+  background: #fff;
+  padding: 0 120px 0 0;
+  border-radius: 30px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.fl-wrap {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.main-search-input:before {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  width: 50px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.41);
+  left: 50%;
+  margin-left: -25px;
+}
+
+.main-search-input-item {
+  float: left;
+  width: 33.3%;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+  height: 50px;
+  position: relative;
+}
+
+#autocomplete-input {
+  position: relative;
+  z-index: 5;
+}
+
+.main-search-input-item {
+  &:first-child {
+    input {
+      border-radius: 100%;
+    }
+  }
+  input {
+    float: left;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.location a {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    z-index: 500;
+    &:hover {
+      border-radius: 100%;
+      animation: pulse 1.1s infinite ease-in-out;
+    }
+  }
+}
+.main-search-button {
+  position: absolute;
+  right: 0px;
+  height: 50px;
+  width: 120px;
+  color: #fff;
+  top: 0;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+  background: #4db7fe;
+}
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1),
+      0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(238, 238, 238, 0.3);
+  }
+}
+.pulse {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 11px 0px 0px -12px;
+  transform: rotateX(55deg);
+  z-index: -2;
+}
+.pulse:after {
+  content: "";
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: -13px 0 0 -19px;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  box-shadow: 0 0 1px 3px #4db7fe;
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-search-input {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 14px 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0);
+  }
+  .main-search-input-item {
+    width: 100%;
+    border: 1px solid #eee;
+    height: 50px;
+    border: none;
+    margin-bottom: 10px;
+  }
+  .main-search-input-item input {
+    border-radius: 6px !important;
+    background: #fff;
+  }
+  .main-search-button {
+    position: relative;
+    float: left;
+    width: 100%;
+    border-radius: 6px;
+  }
+  .main-search-input-item .nice-select {
+    background: #fff;
+  }
+}
+
+@media (min-width: 1064px) {
+  .main-search-container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-search-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-search-container {
+    width: 750px;
+  }
+}
+// intro text
+.fl-wrap {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.intro-item {
+  text-align: center;
+  h2 {
+    font-size: 54px;
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+  h3 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+// end - intro text

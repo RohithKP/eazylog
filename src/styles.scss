@@ -1,2 +1,7 @@
-@import 'variables';
+@import "variables";
 @import "~font-awesome/css/font-awesome.css";
+body * {
+  line-height: 1;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+}

@@ -11,7 +11,9 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class HomeComponent implements OnInit {
   private slides = [];
   private activeSlideIndex = 0;
+  private category;
   public items: Observable<any[]>;
+  private states: string[];
 
   constructor(db: AngularFirestore) {
     this.slides = [{
@@ -20,6 +22,16 @@ export class HomeComponent implements OnInit {
       image: `/assets/images/sample _slider2.jpg`
     }]
     this.items = db.collection('/items').valueChanges();
+    this.category = '';
+    this.states = [
+      'Alabama',
+      'Alaska',
+      'Arizona',
+      'Arkansas',
+      'California',
+      'Colorado',
+      'Connecticut',
+      'Delaware']
   }
 
   ngOnInit() {

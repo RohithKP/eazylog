@@ -31,7 +31,6 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-
     AppRoutingModule,
     HomeModule,
 
