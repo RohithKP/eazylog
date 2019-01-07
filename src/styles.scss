@@ -1,7 +1,12 @@
 @import "variables";
 @import "~font-awesome/css/font-awesome.css";
-body * {
+* {
   line-height: 1;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 13px;
+}
+body {
+  background-color: rgba(196, 196, 196, 0.1);
+  max-width: 100%;
+  overflow-x: hidden;
 }
