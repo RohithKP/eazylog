@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { CategoriesModule } from '@app/modules/categories/categories.module';
 import { FeaturedModule } from '@app/modules/featured/featured.module';
+import { RecentModule } from '@app/modules/recent/recent.module';
 import { HomeComponent } from './pages/home.component';
 import { HomeRoutingModule } from './home.routing';
 import { CarouselModule } from 'ngx-bootstrap/carousel'
@@ -16,7 +17,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     FeaturedModule,
     CarouselModule,
     TypeaheadModule,
-    FormsModule
+    FormsModule,
+    RecentModule
   ],
   declarations: [
     HomeComponent
