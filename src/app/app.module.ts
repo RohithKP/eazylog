@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -43,7 +44,8 @@ export const firebaseConfig = {
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    TypeaheadModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

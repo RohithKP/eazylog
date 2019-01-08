@@ -6,6 +6,24 @@
   max-width: 900px;
   margin: 0px auto;
   position: relative;
+  a {
+    font-size: 13px;
+    line-height: 1;
+  }
+  .dropdown-menu {
+    font-size: 15px !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    .dropdown-item:first-child {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+    .dropdown-item.active, 
+    .dropdown-item:active {
+      background-color: #4db7fe;
+      cursor: pointer;
+    }
+  }
 }
 
 .main-search-container {
@@ -14,6 +32,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 5;
+  padding: 20px 0;
 }
 
 .main-search-input {
@@ -67,6 +86,7 @@
     width: 100%;
     height: 50px;
     padding-left: 20px;
+    font-size: 15px;
     &:focus {
       outline: none;
     }
@@ -80,6 +100,9 @@
       border-radius: 100%;
       animation: pulse 1.1s infinite ease-in-out;
     }
+  }
+  &:last-of-type {
+    border:0 !important;
   }
 }
 .main-search-button {

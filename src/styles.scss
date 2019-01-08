@@ -1,12 +1,12 @@
-@import "variables";
+@import "/variables.scss";
 @import "~font-awesome/css/font-awesome.css";
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 * {
-  line-height: 1;
   font-family: "Quicksand", sans-serif;
-  font-size: 13px;
 }
 body {
-  background-color: rgba(196, 196, 196, 0.1);
+  background-color: rgba(196, 196, 196, 0.2);
   max-width: 100%;
   overflow-x: hidden;
 }

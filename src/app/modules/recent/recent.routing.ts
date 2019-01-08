@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RecentComponent } from './Recent.component';
+import { RecentComponent } from './recent.component';
 
 export const routes: Routes = [
     { path: '', component: RecentComponent, }
