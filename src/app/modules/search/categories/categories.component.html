@@ -1,0 +1,15 @@
+<section class="categories">
+  <div class="title">All Categories</div>
+  <a class="category" *ngFor="let category of categories">
+    <i class="fa fa-list-alt" aria-hidden="true"></i>
+    {{ category }}
+    <span class="count">(50)</span>
+  </a>
+</section>
+<section class="categories">
+  <div class="title">Locations</div>
+  <a class="category" *ngFor="let location of locations">
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    {{ location }}
+  </a>
+</section>

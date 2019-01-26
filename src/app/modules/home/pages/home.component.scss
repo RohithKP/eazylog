@@ -1,11 +1,13 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 .main-search-input-wrap {
   max-width: 900px;
   margin: 0px auto;
   position: relative;
+  font-family: "Quicksand", sans-serif;
   a {
     font-size: 13px;
     line-height: 1;
@@ -33,6 +35,7 @@
   position: relative;
   z-index: 5;
   padding: 20px 0;
+  font-family: "Quicksand", sans-serif;
 }
 
 .main-search-input {

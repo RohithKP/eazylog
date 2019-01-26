@@ -1,0 +1,139 @@
+.search-view {
+    background: #fff;
+    margin: 20px 0;
+    .header {
+        padding: 10px 20px;
+        border-bottom: 1px solid #EBEBEB;
+        .title {
+            font-weight: 500;
+        }
+        .sort {
+            font-size: 14px;
+            font-weight: 500;
+            a {
+                color: #000;
+                &:hover {
+                    color: #007bff;
+                }
+            }
+            i {
+                margin: 0 10px;
+                cursor: pointer;
+                &:hover {
+                    color: #007bff;
+                }
+            }
+            .active {
+                color: #007bff;
+            }
+        }
+    }
+    .grid-view {
+        .card {
+            border: 0;
+            border-radius: 0;
+            .card-header {
+                background: #fff;
+                border: 0;
+                img {
+                    width: 100%;
+                }
+                .category {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 3;
+                    background-color: #fcaf01;
+                    padding: 4px 15px;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 300px;
+                    background: rgba(0, 0, 0, 0);
+                    transition: background 0.5s ease;
+                  }
+                .card-image:hover {
+                    img {
+                        opacity: 0.3
+                    }
+                    .overlay {
+                        display: block;
+                        background: rgba(0, 0, 0, .3);
+                    }
+                    .link-hover {
+                        display : inline-block;
+                    }
+                }
+                .link-hover {
+                    position: absolute;
+                    top: 150px;
+                    left: 150px;
+                    line-height: 3.6;
+                    display: none;
+                    color: #FFFFFF;
+                    height: 50px;
+                    width: 50px;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    border-radius: 50%;
+                    background-color: #139e81;
+                    -webkit-transition: all 0.5s ease-out;
+                    -moz-transition: all 0.5s ease-out;
+                    -ms-transition: all 0.5s ease-out;
+                    -o-transition: all 0.5s ease-out;
+                    transition: all 0.5s ease-out;
+                    &:after {
+                        content: '\f06e';
+                        font-family: FontAwesome;
+                        position: relative;
+                        top: -4px;
+    
+                    }
+                }
+            }
+            .card-body {
+                a.card-title {
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    .list-view {
+        img {
+            width: 100%;
+        }
+        .item-list {
+            border-bottom: 1px solid #EBEBEB;
+            margin: 10px;
+            padding-bottom: 10px;
+            .title {
+                text-decoration: none;
+                font-weight: 500;
+            }
+        }
+    }
+    .location, .contact {
+        color: #9E9E9E;
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .location:before {
+        content: '\f041 ';
+        font-family: FontAwesome;
+        margin-right: 3px;
+    }
+    .contact:before {
+        content: '\f095 ';
+        font-family: FontAwesome;
+        margin-right: 3px;
+    }
+}
