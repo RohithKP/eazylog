@@ -4,7 +4,7 @@
     <span class="sort pull-right">
       <a href="#!">Sort By</a>
       <i class="fa fa-th" aria-hidden="true" (click)="setDisplayMode(1)" [ngClass]="{ active: displayMode == 1 }"></i>
-      <i class="fa fa-list" aria-hidden="true" (click)="setDisplayMode(2)" [ngClass]="{ active:  displayMode == 2 }"></i>
+      <i class="fa fa-list-ul" aria-hidden="true" (click)="setDisplayMode(2)" [ngClass]="{ active:  displayMode == 2 }"></i>
     </span>
   </div>
   <div class="row grid-view" *ngIf=" displayMode == 1">
@@ -27,8 +27,9 @@
   <div class="list-view" *ngIf=" displayMode == 2">
     <div class="item-list" *ngFor="let item of items">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 card-image">
           <img src="https://i.postimg.cc/Jhn3cHhK/1-e-MRPe-e-Pm-F0-XWGypc0xfg.png">
+          <span class="category">Category</span>
         </div>
         <div class="details col-md-8">
           <a class="title" href="">{{ item }}</a>
