@@ -16,6 +16,10 @@ const routes: Routes = [
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+      },
+      {
+        path: 'view',
+        loadChildren: './modules/search/search.module#SearchModule'
       }
 ];
 

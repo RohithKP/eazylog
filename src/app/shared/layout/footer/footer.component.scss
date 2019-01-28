@@ -3,23 +3,24 @@ footer {
         background: #1a1c1d;
         padding: 40px 0;
         .title {
-            font-weight: 600;
-            color: #FFFFFF;
-            font-size: 18px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-        a {
+            color: rgba(255,255,255,0.6);
             font-size: 15px;
             margin-bottom: 15px;
+            position: relative;
+            font-weight: 600;
+        }
+        a {
+            font-size: 14px;
+            margin-bottom: 15px;
             color: #fff;
+            font-weight: 500;
         }
     }
     .footer-bottom {
-        color: #fff;
-        font-weight: 600;
+        color: rgba(255,255,255,0.6);
         font-size: 15px;
-        background: #111212;
-        padding: 30px 0;
+        font-weight: 600;
+        background: #1a1c1d;
+        padding: 15px 0;
     }
 }

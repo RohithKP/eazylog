@@ -1,0 +1,23 @@
+.categories {
+    background: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    margin:20px 0;
+    .title {
+        color: #000;
+        padding: 10px 20px;
+        font-weight: 500;
+        border-bottom: 1px solid #EBEBEB;
+    }
+    .category {
+        padding: 10px 20px;
+        display: block;
+        font-size: 14px;
+        i {
+            margin-right: 3px;
+        }
+    }
+    .count {
+        font-size: 12px;
+        color: #9E9E9E;
+    }
+}

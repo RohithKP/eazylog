@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { SearchModule } from './modules/search/search.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -28,12 +29,13 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    SearchModule,
 
     // core & shared
     CoreModule.forRoot(),
