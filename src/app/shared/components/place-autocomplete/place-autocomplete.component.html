@@ -1,0 +1,22 @@
+<form (ngSubmit)="submitForm()" novalidate>
+    <div class="control" [class.is-loading]="loading">
+      <input class="input" type="text" name="addressInput"
+      autocomplete="off"
+      [(ngModel)]="addressInput" 
+      placeholder="Type an address"
+      (keyup) = "keyUpHandler()">
+    </div>
+  </form>
+  <div class="panel" *ngIf = "predictions && predictions.length > 0">    
+    <a class="panel-block" 
+      *ngFor = "let prediction of predictions"
+      (click) = "suggestionSelected(prediction)">
+      <span class="panel-icon"><i class="fas fa-map-marker-alt"></i></span>
+      {{prediction.description}}
+    </a> 
+  </div>
+  <div class="message is-danger is-small" *ngIf = "errorMessage">
+    <div class="message-body">
+      {{errorMessage}}
+    </div>
+  </div>

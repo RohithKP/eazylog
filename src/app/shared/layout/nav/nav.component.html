@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg" id="mainNav">
+<nav class="navbar fixed-top navbar-light navbar-expand-lg" id="mainNav">
   <div class="container">
-    <a class="navbar-brand">WordPow</a>
+    <a class="navbar-brand">Eazy Log</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      (click)="isCollapsed = !isCollapsed" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fas fa-bars" [ngClass]="{'fa-bars': isCollapsed, 'fa-times': !isCollapsed }"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="navbarResponsive" [collapse]="isCollapsed">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#about">Discover</a>

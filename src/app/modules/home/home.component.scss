@@ -36,7 +36,7 @@
 }
 
 .main-search-input {
-  background: #fff;
+  background: #ffffffeb;
   padding: 0 120px 0 0;
   border-radius: 30px;
   margin-top: 50px;
@@ -49,16 +49,16 @@
   position: relative;
 }
 
-.main-search-input:before {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  width: 50px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.41);
-  left: 50%;
-  margin-left: -25px;
-}
+// .main-search-input:before {
+//   content: "";
+//   position: absolute;
+//   bottom: -40px;
+//   width: 50px;
+//   height: 1px;
+//   background: rgba(255, 255, 255, 0.41);
+//   left: 50%;
+//   margin-left: -25px;
+// }
 
 .main-search-input-item {
   float: left;
@@ -77,7 +77,7 @@
 .main-search-input-item {
   &:first-child {
     input {
-      border-radius: 100%;
+      border-radius: 35px 0px 0px 35px;
     }
   }
   input {
@@ -96,7 +96,9 @@
     top: 18px;
     right: 22px;
     z-index: 500;
+    color: #007bff;
     &:hover {
+      color: #007bff;
       border-radius: 100%;
       animation: pulse 1.1s infinite ease-in-out;
     }
@@ -116,7 +118,10 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   cursor: pointer;
-  background: #4db7fe;
+  background: #007bff;
+  &:focus{
+    outline: none;
+  }
 }
 @keyframes pulse {
   50% {
@@ -124,30 +129,30 @@
       0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(238, 238, 238, 0.3);
   }
 }
-.pulse {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  height: 14px;
-  width: 14px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 11px 0px 0px -12px;
-  transform: rotateX(55deg);
-  z-index: -2;
-}
-.pulse:after {
-  content: "";
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  margin: -13px 0 0 -19px;
-  animation: pulsate 1s ease-out;
-  animation-iteration-count: infinite;
-  opacity: 0;
-  box-shadow: 0 0 1px 3px #4db7fe;
-}
+// .pulse {
+//   background: rgba(0, 0, 0, 0.2);
+//   border-radius: 50%;
+//   height: 14px;
+//   width: 14px;
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   margin: 11px 0px 0px -12px;
+//   transform: rotateX(55deg);
+//   z-index: -2;
+// }
+// .pulse:after {
+//   content: "";
+//   border-radius: 50%;
+//   height: 40px;
+//   width: 40px;
+//   position: absolute;
+//   margin: -13px 0 0 -19px;
+//   animation: pulsate 1s ease-out;
+//   animation-iteration-count: infinite;
+//   opacity: 0;
+//   box-shadow: 0 0 1px 3px #4db7fe;
+// }
 @keyframes pulsate {
   0% {
     transform: scale(0.1, 0.1);
@@ -178,7 +183,7 @@
   }
   .main-search-input-item input {
     border-radius: 6px !important;
-    background: #fff;
+    background: #ffffffeb;
   }
   .main-search-button {
     position: relative;
@@ -191,9 +196,9 @@
   }
 }
 
-@media (min-width: 1064px) {
+@media (min-width: 768px) {
   .main-search-container {
-    width: 1170px;
+    width: 750px;
   }
 }
 
@@ -203,11 +208,12 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1064px) {
   .main-search-container {
-    width: 750px;
+    width: 1170px;
   }
 }
+
 // intro text
 .fl-wrap {
   float: left;
@@ -233,4 +239,6 @@
 .search-header {
   background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/high-tech-designs/neon-cubes-new-technology-colorful-web-header.jpg);
   background-size: 100%;
+  height:380px;
+  padding-top: 80px;
 }
