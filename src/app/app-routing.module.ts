@@ -18,8 +18,20 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'view',
+        path: 'view/category/:name',
         loadChildren: './modules/search/search.module#SearchModule'
+      }, 
+      {
+        path: 'view/location/:name',
+        loadChildren: './modules/search/search.module#SearchModule'
+      },
+      {
+        path: 'view/tag/:name',
+        loadChildren: './modules/search/search.module#SearchModule'
+      },
+      {
+        path: 'view-details/:name',
+        loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
       }
 ];
 

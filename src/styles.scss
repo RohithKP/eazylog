@@ -9,6 +9,9 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+main {
+  margin-top: 55px;
+}
 a {
   text-decoration: none;
   &:hover {
@@ -33,4 +36,7 @@ a {
 .align-center {
   display: flex;
   justify-content: center;
+}
+.container-fluid {
+  max-width: 1680px;
 }

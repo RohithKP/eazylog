@@ -25,6 +25,7 @@
             img {
                 height: 300px;
                 margin-bottom: 10px;
+                width: 100%;
             }
             .title {
                 color : rgba(0, 0, 0, 0.6);
@@ -87,7 +88,8 @@
                 transition: all 0.5s ease-out;
                 &:after {
                     content: '\f06e';
-                    font-family: FontAwesome;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
                     position: relative;
                     top: -4px;
 
@@ -102,12 +104,14 @@
             }
             .contact {
                 &:before {
-                    content: '\f095 ';
-                    font-family: FontAwesome;
+                    content: '\f2a0';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
                     margin-right: 5px;
                     position: relative;
                     left: 0px;
                     top: 2px;
+                    vertical-align: text-bottom;
                 }
             }
         }

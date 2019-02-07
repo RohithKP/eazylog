@@ -28,6 +28,7 @@
     "firebase": "^5.4.2",
     "font-awesome": "^4.7.0",
     "ngx-bootstrap": "^3.0.1",
+    "ngx-hm-carousel": "^1.6.5-bata.1",
     "rxjs": "~6.2.0",
     "rxjs-compat": "^6.3.2",
     "zone.js": "~0.8.26"

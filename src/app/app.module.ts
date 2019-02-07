@@ -1,3 +1,4 @@
+import 'hammerjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -17,6 +18,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { SearchModule } from './modules/search/search.module';
+import { ViewDetailsModule } from './modules/view-details/view-details.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -29,13 +31,14 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     SearchModule,
+    ViewDetailsModule,
 
     // core & shared
     CoreModule.forRoot(),
