@@ -5,6 +5,31 @@
         font-weight: 500;
         border-bottom: 1px solid #EBEBEB;
     }
+    &__info {
+        background: #fff;
+        color: rgba(0, 0, 0, 0.8);
+        margin:20px 0;
+        font-size: 14px;
+        padding: 10px;
+        .title {
+            color: #000;
+            padding: 10px 0;
+            font-weight: 500;
+            border-bottom: 1px solid #EBEBEB; 
+        }
+        .info {
+            .item {
+                margin: 10px 0;
+                .label {
+                    margin-right: 4px;
+                    font-weight: 700;
+                    &:after {
+                        content: ':';
+                    }
+                }
+            }
+        }
+    }
     &__menu {
         background: #fff;
         color: rgba(0, 0, 0, 0.8);

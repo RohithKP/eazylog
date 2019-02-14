@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxHmCarouselModule } from 'ngx-hm-carousel';
+import { AccordionModule } from "ngx-accordion";
 
 import { ViewDetailsComponent } from './view-details.component';
 import { ViewDetailsRoutingModule } from './view-details.routing';
@@ -15,7 +16,8 @@ import { ImageCarousalComponent } from './image-carousal/image-carousal.componen
     ViewDetailsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxHmCarouselModule
+    NgxHmCarouselModule,
+    AccordionModule
   ],
   declarations: [
     ViewDetailsComponent,

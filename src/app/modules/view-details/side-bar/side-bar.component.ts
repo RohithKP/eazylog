@@ -22,6 +22,12 @@ export class SideBarComponent implements OnInit {
   'lorem Ipsem',
  ]
 
+  category = 'Lorem Ipsum'
+  location = 'Lorem Ipsum'
+  email = 'Lorem_Ipsum@ipsum.com'
+  phone = '9999839393'
+  views = 9999
+
   constructor() { }
 
   ngOnInit() {

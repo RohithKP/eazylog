@@ -1,3 +1,32 @@
+<section class="side-bar__info">
+  <div class="title">Info</div>
+  <div class="info">
+    <div class="item">
+      <span class="label">Category</span>
+      <span class="value">
+        <a routerLink="/view/category/{{ category}}">{{ category}}</a>
+      </span>
+    </div>
+    <div class="item">
+      <span class="label">Location</span>
+      <span class="value">
+        <a routerLink="/view/category/{{ location }}">{{ location }}</a>
+      </span>
+    </div>
+    <div class="item">
+      <span class="label">Email</span>
+      <span class="value">{{email}}</span>
+    </div>
+    <div class="item">
+      <span class="label">Phone</span>
+      <span class="value">{{phone}}</span>
+    </div>
+    <div class="item">
+      <span class="label">Views</span>
+      <span class="value">{{views}}</span>
+    </div>
+  </div>
+</section>
 <section class="side-bar__menu">
   <div class="tags">
     <div class="title">Tags</div>

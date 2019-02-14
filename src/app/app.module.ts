@@ -19,6 +19,7 @@ import { SharedModule } from './shared';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { SearchModule } from './modules/search/search.module';
 import { ViewDetailsModule } from './modules/view-details/view-details.module';
+import { RegisterComponent } from './modules/register/register.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -32,6 +33,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

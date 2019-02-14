@@ -39,4 +39,7 @@ a {
 }
 .container-fluid {
   max-width: 1680px;
+  @media(max-width: 768px) {
+    padding: 0
+  }
 }

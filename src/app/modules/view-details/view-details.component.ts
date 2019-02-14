@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  private title = 'Lorem Ipsem';
+  title = 'Lorem Ipsum'
+  details = 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
+  openingHours = [
+    { 'day': 'Monday', 'time': '9:00AM - 6PM' },
+    { 'day': 'Tuesday', 'time': '9:00AM - 6PM' },
+  ]
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
