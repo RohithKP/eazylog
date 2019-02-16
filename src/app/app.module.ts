@@ -1,5 +1,6 @@
 import 'hammerjs';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     RegisterComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    NgtUniversalModule,
     AppRoutingModule,
     HomeModule,
     SearchModule,
@@ -55,6 +57,5 @@ export const firebaseConfig = {
     TypeaheadModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

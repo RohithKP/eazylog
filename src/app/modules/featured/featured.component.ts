@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedComponent implements OnInit {
 
-  private featured
+  public featured
 
   constructor() { }
 

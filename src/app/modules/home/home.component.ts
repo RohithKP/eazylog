@@ -14,12 +14,11 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class HomeComponent implements OnInit {
   private geocoder: any;
-  private activeSlideIndex = 0;
-  private keyword: string;
-  private location: string;
-  private category: string;
+  public keyword: string;
+  public location: string;
+  public category: string;
   public items: Observable<any[]>;
-  private states: string[];
+  public states: string[];
   API_KEY: string = 'AIzaSyDOC3MKpklqEmCUE9GUpIPaXXYnsRuTEpA';
   selectedAddress: any;
   title = 'app';
@@ -45,7 +44,7 @@ export class HomeComponent implements OnInit {
     this.geocoder = new google.maps.Geocoder();
   }
 
-  private getGeoLocation() {
+  public getGeoLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         var lat = position.coords.latitude;

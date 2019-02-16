@@ -1,0 +1,7 @@
+{
+  "universal": {
+    "project": "eazylog",
+    "skipInstall": false,
+    "directory": "."
+  }
+}

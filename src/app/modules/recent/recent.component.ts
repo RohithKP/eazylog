@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentComponent implements OnInit {
 
-  private recent
+  public recent
 
   constructor() { }
 
