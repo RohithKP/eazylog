@@ -31,9 +31,10 @@
         "src/environments/*"
       ]
     },
-    "types": [
-      "googlemaps"
-    ]
+    // "types": [
+    //   "googlemaps",
+    //   "jasmine"
+    // ],
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": false

@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: "categories",
+  templateUrl: "./categories.component.html",
+  styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-
-  private categories
-  constructor() { }
+  public categories: any;
+  constructor() {}
 
   ngOnInit() {
     this.categories = [
@@ -20,7 +19,6 @@ export class CategoriesComponent implements OnInit {
       "Education",
       "Cinemas",
       "Sports"
-    ]
+    ];
   }
-
 }

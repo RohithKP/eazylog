@@ -7,9 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  private isCollapsed: boolean;
-  constructor( private router : Router) { 
-    console.log(router.url)
+  public isCollapsed: boolean;
+  constructor(public router: Router) { 
     this.isCollapsed = true;
   }
 

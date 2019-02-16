@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  private items = []
-  private displayMode = 1
+  public items = []
+  public displayMode = 1
 
   constructor() { }
 
