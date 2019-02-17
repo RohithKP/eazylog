@@ -1,15 +1,15 @@
 declare let google: any;
 
-import { Component, OnInit } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ViewEncapsulation } from "@angular/core";
 
-import { Observable } from 'rxjs/Observable';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from "rxjs/Observable";
+import { AngularFirestore } from "angularfire2/firestore";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
@@ -19,25 +19,26 @@ export class HomeComponent implements OnInit {
   public category: string;
   public items: Observable<any[]>;
   public states: string[];
-  API_KEY: string = 'AIzaSyDOC3MKpklqEmCUE9GUpIPaXXYnsRuTEpA';
+  API_KEY: string = "AIzaSyDOC3MKpklqEmCUE9GUpIPaXXYnsRuTEpA";
   selectedAddress: any;
-  title = 'app';
+  title = "app";
   setSelectedAddress(address: any) {
     this.selectedAddress = address.description;
   }
 
   constructor(db: AngularFirestore) {
-    this.items = db.collection('/items').valueChanges();
-    this.category = '';
+    this.items = db.collection("/items").valueChanges();
+    this.category = "";
     this.states = [
-      'Alabama',
-      'Alaska',
-      'Arizona',
-      'Arkansas',
-      'California',
-      'Colorado',
-      'Connecticut',
-      'Delaware']
+      "Alabama",
+      "Alaska",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "Delaware"
+    ];
   }
 
   ngOnInit() {
@@ -46,13 +47,16 @@ export class HomeComponent implements OnInit {
 
   public getGeoLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        this.codeLatLng(lat, lng);
-      }, () => {
-        alert("Geocoder failed.");
-      });
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          this.codeLatLng(lat, lng);
+        },
+        () => {
+          alert("Geocoder failed.");
+        }
+      );
     } else {
       alert("Geolocation is not supported by this browser.");
     }
@@ -60,9 +64,9 @@ export class HomeComponent implements OnInit {
 
   private codeLatLng(lat, lng) {
     var latlng = new google.maps.LatLng(lat, lng);
-    this.geocoder.geocode({ 'latLng': latlng }, (results, status) => {
+    this.geocoder.geocode({ latLng: latlng }, (results, status) => {
       if (status == google.maps.GeocoderStatus.OK) {
-        console.log(results)
+        console.log(results);
         if (results[1]) {
           //formatted address
           this.location = results[0].formatted_address;

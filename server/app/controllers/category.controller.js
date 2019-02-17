@@ -37,3 +37,10 @@ exports.delete = function (req, res, next) {
         res.send('Deleted successfully!');
     })
 };
+
+exports.getAll = function (req, res, next) {
+    Categories.find({}, function (err, categories) {
+        if (err) return next(err);
+        res.send(categories);
+    })
+};
