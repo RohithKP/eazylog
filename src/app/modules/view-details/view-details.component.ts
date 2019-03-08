@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  title = 'Lorem Ipsum'
-  details = 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
-  openingHours = [
+  public title = 'Lorem Ipsum'
+  public details = 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
+  public activeTab = 1
+  public openingHours = [
     { 'day': 'Monday', 'time': '9:00AM - 6PM' },
     { 'day': 'Tuesday', 'time': '9:00AM - 6PM' },
   ]

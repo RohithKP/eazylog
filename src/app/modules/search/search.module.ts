@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { SearchComponent } from './search.component';
 import { SearchRoutingModule } from './search-routing.module';
@@ -12,7 +13,8 @@ import { ViewComponent } from './view/view.component';
   imports: [
     CommonModule,
     SearchRoutingModule,
-    RouterModule
+    RouterModule,
+    InfiniteScrollModule
   ],
   declarations: [
     SearchComponent,

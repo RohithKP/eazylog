@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewComponent implements OnInit {
 
   public items = []
+  public tempItems = []
   public displayMode = 1
 
   constructor() { }
@@ -16,15 +17,21 @@ export class ViewComponent implements OnInit {
     this.displayMode = mode
   }
 
+  onScrollDown() {
+    if( this.tempItems.length < this.items.length) {
+      let length = this.tempItems.length
+      for( let i=length; i<=length+6; i++) {
+        this.tempItems.push(this.items[i])
+      }
+    }
+  }
+
   ngOnInit() {
-    this.items = [
-      'Lorem Ipsum',
-      'Lorem Ipsum',
-      'Lorem Ipsum',
-      'Lorem Ipsum',
-      'Lorem Ipsum',
-      'Lorem Ipsum',
-    ]
+    for( let i=0; i<30; i++) {
+      this.items.push('Lorem Ipsum')
+    }
+    this.tempItems = this.items.slice(0, 6);
+    console.log(this.tempItems)
   }
 
 }

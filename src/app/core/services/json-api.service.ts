@@ -1,6 +1,7 @@
+
+import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { delay, map, catchError } from 'rxjs/operators';
 
 import { config } from '../app-config';
@@ -26,7 +27,7 @@ export class JsonApiService {
         let errorMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
         
-        return Observable.throw(errorMsg);
+        return observableThrowError(errorMsg);
     }
 
 }
