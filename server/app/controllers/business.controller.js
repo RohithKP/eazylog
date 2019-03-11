@@ -1,44 +1,45 @@
-const Categories = require('../models/category.model').Categories;
+const Business = require('../models/category.model').Business;
+
 //Simple version, without validation or sanitation
 exports.create = function (req, res, next) {
-    let category = new Categories(
+    let business = new Business(
         {
-            name: req.body.name
+            ...req.body
         }
     );
-    category.save(function (err) {
+    business.save(function (err) {
         if (err) {
             return next(err);
         }
-        res.send('category Created successfully')
+        res.send('business Created successfully')
     })
 };
 
 
 exports.details = function (req, res, next) {
-    Categories.findById(req.params.id, function (err, category) {
+    Business.findById(req.params.id, function (err, business) {
         if (err) return next(err);
-        res.send(category);
+        res.send(business);
     })
 };
 
 exports.update = function (req, res, next) {
-    Categories.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, category) {
+    Business.findByIdAndUpdate(req.params.id, { $set: req.body }, function (err, business) {
         if (err) return next(err);
-        res.send('Category udpated.');
+        res.send('business udpated.');
     });
 };
 
 exports.delete = function (req, res, next) {
-    Categories.findByIdAndRemove(req.params.id, function (err) {
+    Business.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
     })
 };
 
 exports.getAll = function (req, res, next) {
-    Categories.find({}, function (err, categories) {
+    Business.find(req.query, function (err, business) {
         if (err) return next(err);
-        res.send(categories);
+        res.send(business);
     })
 };

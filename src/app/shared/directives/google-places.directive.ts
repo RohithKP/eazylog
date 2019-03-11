@@ -13,7 +13,6 @@ export class GooglePlacesDirective implements OnInit {
   }
 
   ngOnInit() {
-    console.log('asdasd')
     const autocomplete = new google.maps.places.Autocomplete(this.element);
   }
 
