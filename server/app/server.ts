@@ -3,16 +3,12 @@ import 'reflect-metadata';
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
-import * as cors from 'cors';
-import * as compression from 'compression';
 const server = require('./local-server');
 const express = server.express;
 export const app = server.app;
 
 enableProdMode();
 
-app.use(compression());
-app.use(cors());
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');

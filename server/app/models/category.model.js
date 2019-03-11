@@ -4,12 +4,10 @@ const Schema = mongoose.Schema;
 let categories = new Schema({
     id: Schema.Types.ObjectId,
     name: { type: String, required: true, max: 100, trim: true },
-    detailUrl: { type: String },
-    count: { type: Number, default: 0 },
-    imgUrl: { type: String }
+    count: { type: Number, default: 0 }
 });
 
-let buisness = new Schema({
+let business = new Schema({
     id: Schema.Types.ObjectId,
     name: { type: String, required: true, max: 100, trim: true },
     imgUrl: { type: String, required: true },
@@ -30,5 +28,8 @@ let buisness = new Schema({
 });
 
 // Export the model
-module.exports = mongoose.model('Categories', categories);
+module.exports = {
+    Categories : mongoose.model('Categories', categories), 
+    Business: mongoose.model('Business', business)
+}
 
