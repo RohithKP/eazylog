@@ -46,3 +46,19 @@
         width: 100% !important;
     }
 }
+.tab-view {
+    margin-top: 20px;
+    .btn-link-lg {
+        padding: 5px;
+        font-size: 12px;
+        margin-right: 10px;
+        &.active {
+            background: #007bff;
+            color: #fff;
+        }
+    }
+    .value {
+        margin-top: 20px;
+        font-weight: 500;
+    }
+}

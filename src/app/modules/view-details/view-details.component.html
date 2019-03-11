@@ -5,16 +5,26 @@
         <section class="details-wrapper">
           <h1 class="title">{{ title }}</h1>
           <image-carousal></image-carousal>
-          <div class="details">
-            <div class="title">Details</div>
-            <div class="value">{{ details }}</div>
-          </div>
-          <div class="opening">
-            <div class="title">Opening Hours</div>
-            <div class="value" *ngFor="let item of openingHours">
-              <span class="label">{{ item.day }}</span>
-              <span class="text">{{ item.time }}</span>
+          <div class="tab-view">
+            <div class="tab">
+              <button 
+                (click)="activeTab = 1"
+                [ngClass]="{'active' : activeTab == 1}"
+                class="btn-link-lg">Details</button>
+              <button 
+              (click)="activeTab = 2"
+              [ngClass]="{'active' : activeTab == 2}"
+              class="btn-link-lg">Opening Hours</button>
             </div>
+            <div class="details" *ngIf="activeTab == 1">
+              <div class="value">{{ details }}</div>
+            </div>
+            <div class="opening" *ngIf="activeTab == 2">
+              <div class="value" *ngFor="let item of openingHours">
+                <span class="label">{{ item.day }}</span>
+                <span class="text">{{ item.time }}</span>
+              </div>
+            </div>            
           </div>
         </section>
         <section class="map">

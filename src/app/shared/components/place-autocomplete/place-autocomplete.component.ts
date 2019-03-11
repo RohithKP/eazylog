@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
+
 
 @Component({
 	selector: 'place-autocomplete',

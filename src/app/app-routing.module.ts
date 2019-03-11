@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '@app/core/guards/auth.guard';
 
 const routes: Routes = [
-    {
+      {
         path: 'login',
         loadChildren: './modules/login/login.module#LoginModule'
       },
@@ -16,6 +16,10 @@ const routes: Routes = [
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+      },
+      {
+        path: 'register',
+        loadChildren: './modules/register/register.module#RegisterModule'
       },
       {
         path: 'view/category/:name',
@@ -32,7 +36,11 @@ const routes: Routes = [
       {
         path: 'view-details/:name',
         loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
-      }
+      },
+      {
+        path: 'contact',
+        loadChildren: './modules/contact/contact.module#ContactModule'
+      },
 ];
 
 @NgModule({

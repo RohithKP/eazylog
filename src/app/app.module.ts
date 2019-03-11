@@ -8,7 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeModule } from './modules/home/home.module';
-import { CarouselModule } from 'ngx-bootstrap/carousel'
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 // angular firebase
 import { AngularFireModule } from 'angularfire2';
@@ -20,7 +22,8 @@ import { SharedModule } from './shared';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { SearchModule } from './modules/search/search.module';
 import { ViewDetailsModule } from './modules/view-details/view-details.module';
-import { RegisterComponent } from './modules/register/register.component';
+import { RegisterModule } from './modules/register/register.module';
+import { ContactModule } from './modules/contact/contact.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -34,8 +37,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-  ],
+    ],
   imports: [
     CommonModule,
     NgtUniversalModule,
@@ -43,6 +45,9 @@ export const firebaseConfig = {
     HomeModule,
     SearchModule,
     ViewDetailsModule,
+    RegisterModule,
+    ContactModule,
+
 
     // core & shared
     CoreModule.forRoot(),
@@ -50,6 +55,7 @@ export const firebaseConfig = {
 
     BsDropdownModule.forRoot(),
     CarouselModule,
+    InfiniteScrollModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

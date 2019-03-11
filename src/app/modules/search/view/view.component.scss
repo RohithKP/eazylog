@@ -49,14 +49,13 @@
         background: rgba(0, 0, 0, 0);
         transition: background 0.5s ease;
       }
+    .card {
+        box-shadow: none;
+        .card-body {
+            margin: 0 5px;
+        }
+    }
     .card-image:hover {
-        img {
-            opacity: 0.3
-        }
-        .overlay {
-            display: block;
-            background: rgba(0, 0, 0, .3);
-        }
         .link-hover {
             display : inline-block;
         }
@@ -96,7 +95,8 @@
             .card-header {
                 background: #fff;
                 border: 0;
-                img {
+                .card-image img {
+                    height: 160px;
                     width: 100%;
                 }
             }
@@ -104,6 +104,7 @@
                 a.card-title {
                     text-decoration: none;
                     font-weight: 500;
+                    line-height: 2;
                 }
             }
         }
@@ -111,6 +112,7 @@
     .list-view {
         img {
             width: 100%;
+            height: 170px;
         }
         .item-list {
             border-bottom: 1px solid #EBEBEB;
@@ -126,19 +128,9 @@
         }
     }
     .location, .contact {
-        color: #9E9E9E;
+        color: #282C3F;
         font-size: 13px;
-    }
-    .location:before {
-        content: '\f041 ';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-right: 3px;
-    }
-    .contact:before {
-        content: '\f2a0';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-right: 3px;
+        font-weight: 500;
+        line-height: 2;
     }
 }
