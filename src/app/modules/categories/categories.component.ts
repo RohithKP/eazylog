@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { CategoryService } from "./../../core/services/category.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -6,19 +8,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  public categories: any;
-  constructor() {}
+  public categories: Observable<any>
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
-    this.categories = [
-      "Electronics",
-      "Cars and Vehicles",
-      "Pets",
-      "Hotels",
-      "Clothes",
-      "Education",
-      "Cinemas",
-      "Sports"
-    ];
+    this.categories = this.categoryService.getAll();
   }
 }

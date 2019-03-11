@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "scripts": {
     "ng": "ng",
-    "start": "start ng serve & start node local.js",
+    "start": "start ng serve& set NODE_ENV=dev&& node local.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +11,8 @@
     "build:server:prod": "ng run eazylog:server && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --prod",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
-    "server": "node local.js"
+    "server": "node local.js",
+    "dev-server": "set NODE_ENV=dev&& nodemon local.js"
   },
   "private": true,
   "dependencies": {
@@ -68,6 +69,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "^5.4.2",
     "rxjs-tslint": "^0.1.7",
+    "nodemon": "^1.18.10",
     "ts-node": "~7.0.0",
     "tslint": "^5.13.0",
     "typescript": "3.1.6"

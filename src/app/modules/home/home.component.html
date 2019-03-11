@@ -1,28 +1,28 @@
 <section class="clearfix search-header">
-    <div class="main-search-container clearfix">
-      <div class="intro-item fl-wrap">
-        <h2>We will help you to find all</h2>
-        <h3>Find great places , hotels , restourants , shops.</h3>
-      </div>
-      <div class="main-search-input-wrap">
-        <div class="main-search-input fl-wrap">
-          <div class="main-search-input-item">
-            <input [(ngModel)]="keyword" type="text" placeholder="What are you looking for?" value="">
-          </div>
-          <div class="main-search-input-item location" id="autocomplete-container">
-            <input [(ngModel)]="location" google-place type="text" placeholder="Location" id="autocomplete-input" value="" autocomplete="off">
-            <a (click)="getGeoLocation()"><i class="fa fa-map-marker-alt"></i></a>
-          </div>
-          <div class="main-search-input-item">
-            <input name="categorys" [(ngModel)]="category" [typeahead]="states" [typeaheadOptionsLimit]="7"
-              [typeaheadMinLength]="0" placeholder="All Categories" class="form-control" autocomplete="off">
-          </div>
-          <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+  <div class="main-search-container clearfix">
+    <div class="intro-item fl-wrap">
+      <h2>We will help you to find all</h2>
+      <h3>Find great places , hotels , restourants , shops.</h3>
+    </div>
+    <div class="main-search-input-wrap">
+      <div class="main-search-input fl-wrap">
+        <div class="main-search-input-item">
+          <input [(ngModel)]="keyword" type="text" placeholder="What are you looking for?" value="">
         </div>
+        <div class="main-search-input-item location" id="autocomplete-container">
+          <input [(ngModel)]="location" google-place type="text" placeholder="Location" id="autocomplete-input" value=""
+            autocomplete="off">
+          <a (click)="getGeoLocation()"><i class="fa fa-map-marker-alt"></i></a>
+        </div>
+        <div class="main-search-input-item">
+          <input name="categorys" [(ngModel)]="category" [typeahead]="states" [typeaheadOptionsLimit]="7"
+            [typeaheadMinLength]="0" placeholder="All Categories" class="form-control" autocomplete="off">
+        </div>
+        <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
       </div>
     </div>
-  </section>
-  <categories></categories>
-  <featured></featured>
-  <recent></recent>
-  
+  </div>
+</section>
+<categories></categories>
+<featured></featured>
+<recent></recent>
