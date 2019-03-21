@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BusinessService } from "./../../core/services/business.service";
 
 @Component({
   selector: 'recent',
@@ -7,19 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentComponent implements OnInit {
 
-  public recent
+  public recent: Observable <any>
 
-  constructor() { }
+  constructor( private businessService:BusinessService) { }
 
   ngOnInit() {
-    this.recent = [
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title"
-    ]
+    this.recent = this.businessService.getAll()
   }
 
 }

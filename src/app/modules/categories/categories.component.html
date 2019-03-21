@@ -1,19 +1,13 @@
 <div id="categories" class="container">
   <h2 class="header-title text-center">Top Categories</h2>
   <div class="row categories-wrapper">
-<<<<<<< HEAD
-    <div class="col-lg-3 col-md-6 col-sm-6 col-6 item-mb" *ngFor="let cat of categories">
-      <a class="card text-center" routerLink="/view/category/{{cat}}">
-        <i class="fas fa-archive"></i>
-        <h3 class="title">{{cat}}</h3>
-        <div class="total">(1300)</div>
-=======
-    <div class="col-lg-3 col-md-6 col-sm-6 col-12 item-mb" *ngFor="let cat of categories | async">
-      <a class="card text-center" routerLink="/view/category/{{cat.name}}">
-        <i class="fa fa-folder-o fa-4x text-danger" aria-hidden="true"></i>
-        <h3 class="title">{{cat.name}}</h3>
-        <div class="total">({{cat.count}})</div>
->>>>>>> c8bbf91cc16eeca8c61976e81709e2458fdd9d40
+    <div class="col-12 col-md-2 item-mb" *ngFor="let cat of categories | async">
+      <a class="card text-center" routerLink="/view/category/{{cat.id}}/{{cat.name | replaceURL | lowercase}}">
+        <div>
+          <div><i class="fas fa-archive"></i></div>
+          <div><h3 class="title">{{cat.name}}</h3></div>
+          <div class="total">({{cat.count}})</div>
+        </div>
       </a>
     </div>
   </div>

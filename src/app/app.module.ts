@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//import { ReplaceURL } from './shared/replace-url.pipe';
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeModule } from './modules/home/home.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -37,6 +39,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    //ReplaceURL
     ],
   imports: [
     CommonModule,
@@ -62,6 +65,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     TypeaheadModule.forRoot()
   ],
+  exports: [],
   providers: [],
 })
 export class AppModule { }

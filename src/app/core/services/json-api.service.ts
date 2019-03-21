@@ -1,14 +1,8 @@
 
 import {throwError as observableThrowError,  Observable } from 'rxjs';
-<<<<<<< HEAD
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { delay, map, catchError } from 'rxjs/operators';
-=======
 import { Injectable, isDevMode } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { delay, catchError, tap } from 'rxjs/operators';
->>>>>>> c8bbf91cc16eeca8c61976e81709e2458fdd9d40
 
 import { httpOptions } from "../app-config";
 
@@ -16,7 +10,9 @@ import { httpOptions } from "../app-config";
 export class JsonApiService {
     constructor(private httpClient: HttpClient) { }
 
-    get(url): Observable<any> {
+    get(url, params = {}): Observable<any> {
+        let Params = new HttpParams();
+        Params = Params.append('param-1', 'value-1');
         return this.httpClient.get(this.getBaseUrl() + url, httpOptions).pipe(
             delay(100),
             catchError(this.handleError)

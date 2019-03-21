@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FeaturedComponent } from './featured.component';
 import { FeaturedRoutingModule } from './featured.routing';
 
+import { PipesModule } from '../../pipes/pipes.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -11,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FeaturedRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ],
   declarations: [
     FeaturedComponent

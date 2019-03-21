@@ -53,12 +53,14 @@
         font-size: 12px;
         margin-right: 10px;
         &.active {
-            background: #767c83;
+            background: #007bff;
             color: #fff;
         }
     }
     .value {
-        margin-top: 20px;
         font-weight: 500;
+        &:first-of-type {
+            margin-top: 20px;
+        }
     }
 }

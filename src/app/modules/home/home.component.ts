@@ -3,13 +3,8 @@ declare let google: any;
 import { Component, OnInit } from "@angular/core";
 import { ViewEncapsulation } from "@angular/core";
 
-<<<<<<< HEAD
-import { Observable } from 'rxjs';
-import { AngularFirestore } from 'angularfire2/firestore';
-=======
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { AngularFirestore } from "angularfire2/firestore";
->>>>>>> c8bbf91cc16eeca8c61976e81709e2458fdd9d40
 
 @Component({
   selector: "app-home",

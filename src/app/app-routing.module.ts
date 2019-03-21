@@ -26,15 +26,15 @@ const routes: Routes = [
         loadChildren: './modules/search/search.module#SearchModule'
       }, 
       {
-        path: 'view/location/:name',
+        path: 'view/location/:id/:name',
         loadChildren: './modules/search/search.module#SearchModule'
       },
       {
-        path: 'view/tag/:name',
+        path: 'view/tag/:id/:name',
         loadChildren: './modules/search/search.module#SearchModule'
       },
       {
-        path: 'view-details/:name',
+        path: 'view-details/:id/:name',
         loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
       },
       {

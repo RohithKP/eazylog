@@ -4,7 +4,7 @@ import { JsonApiService } from './json-api.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class BuisnessService {
+export class BusinessService {
 
     constructor(private jsonApiService: JsonApiService) { }
 
@@ -29,4 +29,6 @@ export class BuisnessService {
     delete(id): Observable<any> {
         return this.jsonApiService.delete(id, `/business`);
     }
+
+    
 }
