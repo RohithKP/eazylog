@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BusinessService } from "./../../core/services/business.service";
 
 @Component({
   selector: 'app-view-details',
@@ -7,18 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  public title = 'Lorem Ipsum'
-  public details = 'Lorem Ipsum Lorem Ipsum Lorem Ipsum'
+  public item 
+  public id: string
   public activeTab = 1
-  public openingHours = [
-    { 'day': 'Monday', 'time': '9:00AM - 6PM' },
-    { 'day': 'Tuesday', 'time': '9:00AM - 6PM' },
-  ]
 
-  constructor() { }
+  constructor(
+    private businessService:BusinessService,
+    private route: ActivatedRoute
+  ) {  }
 
   ngOnInit() {
-    
+    this.id = this.route.snapshot.params.id
+    this.businessService.get(this.id).subscribe( data =>{ 
+      this.item = data
+    })
   }
 
 }

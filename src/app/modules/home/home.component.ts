@@ -3,7 +3,7 @@ declare let google: any;
 import { Component, OnInit } from "@angular/core";
 import { ViewEncapsulation } from "@angular/core";
 
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { AngularFirestore } from "angularfire2/firestore";
 
 @Component({

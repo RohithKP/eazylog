@@ -8,7 +8,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 
 import { throwIfAlreadyLoaded } from './guards/module-import.guard';
 
-import { JsonApiService, CategoryService, UserService, AuthService } from './services';
+import { JsonApiService, CategoryService, UserService, AuthService, BusinessService } from './services';
 
 @NgModule({
     imports: [
@@ -20,6 +20,7 @@ import { JsonApiService, CategoryService, UserService, AuthService } from './ser
 
         JsonApiService,
         CategoryService,
+        BusinessService,
         UserService,
         AuthService,
 
@@ -40,6 +41,7 @@ export class CoreModule {
             ngModule: CoreModule,
             providers: [JsonApiService,
                 CategoryService,
+                BusinessService,
                 UserService,
                 AuthService,]
         }

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RecentComponent } from './recent.component';
 import { RecentRoutingModule } from './recent.routing';
 
+import { PipesModule } from '../../pipes/pipes.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -11,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RecentRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ],
   declarations: [
     RecentComponent

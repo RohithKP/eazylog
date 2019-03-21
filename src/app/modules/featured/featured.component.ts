@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BusinessService } from "./../../core/services/business.service";
 
 @Component({
   selector: 'featured',
@@ -7,19 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedComponent implements OnInit {
 
-  public featured
-
-  constructor() { }
+  public featured: Observable<any>
+  constructor(private businessService: BusinessService) {}
 
   ngOnInit() {
-    this.featured = [
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title",
-      "Test title",
-    ]
+    this.featured = this.businessService.getAll();
+    console.log(this.featured)
   }
 
 

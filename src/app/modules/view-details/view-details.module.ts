@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 import { AccordionModule } from "ngx-accordion";
 
+import { PipesModule } from '../../pipes/pipes.module';
+
 import { ViewDetailsComponent } from './view-details.component';
 import { ViewDetailsRoutingModule } from './view-details.routing';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -17,7 +19,8 @@ import { ImageCarousalComponent } from './image-carousal/image-carousal.componen
     FormsModule,
     ReactiveFormsModule,
     NgxHmCarouselModule,
-    AccordionModule
+    AccordionModule,
+    PipesModule
   ],
   declarations: [
     ViewDetailsComponent,

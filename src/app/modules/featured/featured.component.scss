@@ -14,8 +14,7 @@
         .card {
             border : 0 !important;
             margin-bottom: 30px;
-            padding: 20px 15px;
-            padding-top: 0;
+            padding-bottom: 20px;
             cursor: pointer;
             &:hover {
                 -webkit-box-shadow: 0px 1px 10px 0px rgba(205, 214, 222, 0.75);
@@ -69,16 +68,12 @@
             .link-hover {
                 position: absolute;
                 top: 100px;
-                left: 150px;
-                line-height: 3.6;
+                left: 43%;
+                line-height: 2.7;
                 display: none;
                 color: #FFFFFF;
-                height: 50px;
-                width: 50px;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
+                height: 35px;
+                width: 35px;
                 border-radius: 50%;
                 background-color: #139e81;
                 -webkit-transition: all 0.5s ease-out;

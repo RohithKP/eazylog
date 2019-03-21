@@ -18,7 +18,9 @@
           <input name="categorys" [(ngModel)]="category" [typeahead]="states" [typeaheadOptionsLimit]="7"
             [typeaheadMinLength]="0" placeholder="All Categories" class="form-control" autocomplete="off">
         </div>
-        <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+        <a routerLink="/view/category/test">
+          <button class="main-search-button">Search</button>        
+        </a>
       </div>
     </div>
   </div>

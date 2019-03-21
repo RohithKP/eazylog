@@ -1,35 +1,41 @@
 <section class="side-bar__info">
-  <div class="title">Info</div>
+  <div class="title"><i class="fas fa-info-circle"></i>Info</div>
   <div class="info">
     <div class="item">
-      <span class="label">Category</span>
       <span class="value">
-        <a routerLink="/view/category/{{ category}}">{{ category}}</a>
+        <i class="far fa-folder"></i>
+        <a routerLink="/view/category/{{ item.category | replaceURL | lowercase}}">{{ item.category}}</a>
       </span>
     </div>
     <div class="item">
-      <span class="label">Location</span>
       <span class="value">
-        <a routerLink="/view/category/{{ location }}">{{ location }}</a>
+        <i class="fas fa-location-arrow"></i>
+        <a routerLink="/view/category/{{ item.locationName | replaceURL | lowercase }}">{{ item.locationName }}</a>
       </span>
     </div>
     <div class="item">
-      <span class="label">Email</span>
-      <span class="value">{{email}}</span>
+      <span class="value">
+        <i class="fas fa-envelope"></i>
+        {{item.email}}
+      </span>
     </div>
     <div class="item">
-      <span class="label">Phone</span>
-      <span class="value">{{phone}}</span>
+      <span class="value">
+        <i class="fas fa-phone-square"></i>
+        {{item.phone}}
+      </span>
     </div>
     <div class="item">
-      <span class="label">Views</span>
-      <span class="value">{{views}}</span>
+      <span class="value">
+        <i class="far fa-eye"></i>    
+        {{item.views}}
+      </span>
     </div>
   </div>
 </section>
 <section class="side-bar__menu">
   <div class="tags">
-    <div class="title">Tags</div>
+    <div class="title"><i class="fas fa-tags"></i>Tags</div>
     <a routerLink="/view/tag/{{tag}}" *ngFor="let tag of tags" class="tag">{{ tag }}</a>
   </div>
   <ul>
@@ -39,7 +45,7 @@
 </section>
 <section class="side-bar__locations">
   <div class="locations">
-    <div class="title">Top locations</div>
+    <div class="title"><i class="fas fa-location-arrow"></i>Top locations</div>
     <a routerLink="/view/location/{{location}}" *ngFor="let location of locations" class="location">{{ location }}</a>
   </div>
 </section>

@@ -58,7 +58,9 @@
         }
     }
     .value {
-        margin-top: 20px;
         font-weight: 500;
+        &:first-of-type {
+            margin-top: 20px;
+        }
     }
 }
