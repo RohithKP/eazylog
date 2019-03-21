@@ -13,23 +13,31 @@ let business = new Schema({
     imgUrl: { type: String, required: true },
     address: {
         addressLine1: { type: String, required: true },
-        addressLine2: { type: String, required: true },
+        addressLine2: { type: String },
         city: { type: String, required: true },
         state: { type: String, required: true },
         zipcode: { type: String, required: true }
     },
     phone: { type: Number },
     description: { type: String, required: true },
-    category: { type: String, required: true },
-    openingHours: {
+    category: {
+        name:{ type: String, required: true },
+        id: { type: String, required: true },
+    },
+    openingHours: [{
+        day: { type: String, required: true },
         from: { type: String, required: true },
         to: { type: String, required: true }
-    }
+    }],
+    locationName: { type: String, required: true },
+    email: { type: String },
+    gallery: [String],
+    tags: [String]
 });
 
 // Export the model
 module.exports = {
-    Categories : mongoose.model('Categories', categories), 
+    Categories: mongoose.model('Categories', categories),
     Business: mongoose.model('Business', business)
 }
 

@@ -17,7 +17,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
         ServerModule,
         NoopAnimationsModule,
         ModuleMapLoaderModule,
-        ServerTransferStateModule, // comment
+        ServerTransferStateModule,
     ]
 })
 export class AppServerModule { }
