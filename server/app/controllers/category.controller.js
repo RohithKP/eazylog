@@ -23,10 +23,17 @@ exports.details = function (req, res, next) {
 };
 
 exports.update = function (req, res, next) {
-    Categories.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, category) {
-        if (err) return next(err);
-        res.send('Category udpated.');
-    });
+    if(req.params.id){
+        Categories.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, category) {
+            if (err) return next(err);
+            res.send(category ? 'Category udpated.': 'No Category by that Id');
+        });
+    }else{
+        Categories.findOneAndUpdate(req.params, req.body, {upsert:false}, function(err, doc){
+            if (err) return res.send(500, { error: err });
+            return next("succesfully saved");
+        });
+    }
 };
 
 exports.delete = function (req, res, next) {
