@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public OnActivate() {
-    window.scroll(0,0);
-  }
 }

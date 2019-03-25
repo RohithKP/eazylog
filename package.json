@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve& set NODE_ENV=dev&& node local.js",
-    "build:dev": "ng build",
+    "start": "ng serve& node local.js",
+    "fe-build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -12,7 +12,8 @@
     "build:browser:prod": "ng build --prod",
     "build": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js",
-    "dev-server": "set NODE_ENV=dev&& nodemon --inspect local.js"
+    "dev-server": "set NODE_ENV=dev&& nodemon --inspect local.js",
+    "fe-serve": "ng serve& set NODE_ENV=dev& node local.js"
   },
   "private": true,
   "dependencies": {
@@ -47,7 +48,7 @@
     "ngx-infinite-scroll": "^6.0.0",
     "rxjs": "^6.4.0",
     "ts-loader": "4.2.0",
-    "webpack-cli": "^2.1.4",
+    "webpack-cli": "^3.3.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {

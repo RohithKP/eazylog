@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { PlaceAutocompleteComponent } from "@app/shared/components/place-autocomplete/place-autocomplete.component";
+import { PlaceAutocompleteComponent } from "./place-autocomplete/place-autocomplete.component";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
 
