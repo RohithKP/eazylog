@@ -3,11 +3,10 @@ import 'reflect-metadata';
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
+enableProdMode();
 const server = require('./local-server');
 const express = server.express;
 export const app = server.app;
-
-enableProdMode();
 
 const domino = require('domino');
 const fs = require('fs');
@@ -18,6 +17,7 @@ global['window'] = win;
 global['document'] = win.document;
 
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('../../dist/server/main');
+console.log(AppServerModuleNgFactory)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [

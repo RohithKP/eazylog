@@ -5,7 +5,7 @@
       <a class="card text-center" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
           <img src="{{cat.imgUrl}}" />
-          <span class="category">{{cat.category}}</span>
+          <span class="category">{{cat.category.name}}</span>
           <span class="overlay"></span>
           <span class="link-hover"></span>
         </div>

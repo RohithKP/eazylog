@@ -1,6 +1,6 @@
 declare let google: any;
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { ViewEncapsulation } from "@angular/core";
 
 import { Observable } from "rxjs";
@@ -12,7 +12,7 @@ import { AngularFirestore } from "angularfire2/firestore";
   styleUrls: ["./home.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   private geocoder: any;
   public keyword: string;
   public location: string;
@@ -42,9 +42,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  ngAfterViewInit(): void {
     this.geocoder = new google.maps.Geocoder();
   }
-
   public getGeoLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
