@@ -30,8 +30,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(compression());
 app.use(cors());
-app.use('/categories', category);
-app.use('/business', business);
+app.use('/api/v1/categories', category);
+app.use('/api/v1/business', business);
 
 const server = {
     express: express,

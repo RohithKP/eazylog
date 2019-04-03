@@ -10,12 +10,7 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: './modules/home/home.module#HomeModule',
-        canActivate: []
-      },
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
+        canActivate: [AuthGuard]
       },
       {
         path: 'register',
@@ -23,29 +18,39 @@ const routes: Routes = [
       },
       {
         path: 'view/category/:name',
-        loadChildren: './modules/search/search.module#SearchModule'
+        loadChildren: './modules/search/search.module#SearchModule',
+        canActivate: [AuthGuard]
       }, 
       {
         path: 'view/location/:id/:name',
-        loadChildren: './modules/search/search.module#SearchModule'
+        loadChildren: './modules/search/search.module#SearchModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'view/tag/:id/:name',
-        loadChildren: './modules/search/search.module#SearchModule'
+        loadChildren: './modules/search/search.module#SearchModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'view-details/:id/:name',
-        loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
+        loadChildren: './modules/view-details/view-details.module#ViewDetailsModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'contact',
-        loadChildren: './modules/contact/contact.module#ContactModule'
+        loadChildren: './modules/contact/contact.module#ContactModule',
+        canActivate: [AuthGuard]
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
       },
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
     exports: [RouterModule],
-    providers: []
+    providers: [AuthGuard]
 })
 export class AppRoutingModule { }
