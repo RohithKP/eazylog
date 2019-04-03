@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReplaceURL } from './replace-url.pipe';
+import { SafeHTMLPipe } from './safe-html.pipe';
 
 @NgModule({
-  declarations: [ReplaceURL],
+  declarations: [ReplaceURL, SafeHTMLPipe],
   imports: [
     CommonModule,
   ],
-  exports: [ReplaceURL]
+  exports: [ReplaceURL, SafeHTMLPipe]
 
 })
 export class PipesModule { 

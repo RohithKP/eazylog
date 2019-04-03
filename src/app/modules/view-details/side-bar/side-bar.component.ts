@@ -10,13 +10,6 @@ import { BusinessService } from "./../../../core/services/business.service";
 })
 export class SideBarComponent implements OnInit {
 
- public tags = [
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
- ]
  public locations = [
   'lorem Ipsem',
   'lorem Ipsem',

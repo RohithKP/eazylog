@@ -2,17 +2,19 @@
   <h2 class="header-title text-center">Recents</h2>
   <div class="row featured-wrapper">
     <div class="col-md-3 col-sm-6 col-12 item-mb" *ngFor="let cat of recent | async">
-      <a class="card text-center" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
+      <a class="card" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
           <img src="{{cat.imgUrl}}" />
-          <span class="category">{{cat.category}}</span>
+          <span class="category">{{cat.category.name}}</span>
           <span class="overlay"></span>
           <span class="link-hover"></span>
         </div>
-        <h3 class="title">{{cat.name}}</h3>
-        <div class="rating"></div>
-        <div class="place">{{cat.location}}</div>
-        <div class="contact">{{cat.phone}}</div>
+        <div class="card-body">
+          <h3 class="title">{{cat.name}}</h3>
+          <div class="rating"></div>
+          <div class="place">{{cat.locationName}}</div>
+          <div class="contact">{{cat.phone}}</div>
+        </div>
       </a>
     </div>
   </div>

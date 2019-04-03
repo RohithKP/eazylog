@@ -4,7 +4,7 @@
     <div class="item">
       <span class="value">
         <i class="far fa-folder"></i>
-        <a routerLink="/view/category/{{ item.category | replaceURL | lowercase}}">{{ item.category}}</a>
+        <a routerLink="/view/category/{{ item.category.name | replaceURL | lowercase}}">{{ item.category.name}}</a>
       </span>
     </div>
     <div class="item">
@@ -33,10 +33,37 @@
     </div>
   </div>
 </section>
+<section class="side-bar__address">
+  <div class="title"><i class="fas fa-address-book"></i>Address</div>
+  <div class="info">
+    <div class="item">{{ item.address.addressLine1 }}</div>
+    <div class="item">{{ item.address.addressLine2 }}</div>
+    <div class="item">{{ item.address.city }}</div>
+    <div class="item">{{ item.address.state }}</div>
+    <div class="item">{{ item.address.zip }}</div>
+  </div>
+</section>
+<section class="side-bar__map">
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe 
+        width="100%" 
+        height="300" 
+        id="gmap_canvas" 
+        src="https://maps.google.com/maps?q=Kottakkal,Kerala&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0"
+        marginwidth="0">
+      </iframe>
+    </div>
+    <style>.mapouter{text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style>
+  </div>
+</section>
 <section class="side-bar__menu">
   <div class="tags">
     <div class="title"><i class="fas fa-tags"></i>Tags</div>
-    <a routerLink="/view/tag/{{tag}}" *ngFor="let tag of tags" class="tag">{{ tag }}</a>
+    <a routerLink="/view/tag/{{tag}}" *ngFor="let tag of item.tags" class="tag">{{ tag }}</a>
   </div>
   <ul>
     <li class="report-bussiness"><a routerLink="/report">Report this bussiness</a></li>
