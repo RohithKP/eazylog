@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { BusinessService } from "./../../core/services/business.service";
 
 @Component({
@@ -13,6 +12,7 @@ export class ViewDetailsComponent implements OnInit {
   public item 
   public id: string
   public activeTab = 1
+  public embedCode = '<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>';
 
   constructor(
     private businessService:BusinessService,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BusinessService } from "./../../../core/services/business.service";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'image-carousal',
@@ -13,18 +15,20 @@ export class ImageCarousalComponent implements OnInit {
   direction = 'right';
   directionToggle = true;
   autoplay = true;
-  avatars = '1234567891234'.split('').map((x, i) => {
-    const num = i;
-    // const num = Math.floor(Math.random() * 1000);
-    return {
-      url: `https://picsum.photos/1200/600/?${num}`,
-      title: `${num}`
-    };
-  });
+  images = [];
+  id: number;
 
-  constructor() { }
+  constructor(
+    private businessService:BusinessService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.params.id
+    this.businessService.get(this.id).subscribe( data =>{ 
+      this.images = data.gallery
+      console.log(this.images)
+    })
   }
 
 }
