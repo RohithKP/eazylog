@@ -6,3 +6,11 @@
     font-weight: 700;
   }
 }
+.navbar-brand {
+  img {
+    width: 200px;
+    @media(max-width: 768px) {
+      width: 150px;
+    }
+  }
+}

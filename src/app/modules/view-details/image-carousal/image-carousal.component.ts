@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BusinessService } from "./../../../core/services/business.service";
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,17 +18,15 @@ export class ImageCarousalComponent implements OnInit {
   images = [];
   id: number;
 
+  @Input() item: any;
+
   constructor(
     private businessService:BusinessService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params.id
-    this.businessService.get(this.id).subscribe( data =>{ 
-      this.images = data.gallery
-      console.log(this.images)
-    })
+    this.images = this.item.gallery;
   }
 
 }

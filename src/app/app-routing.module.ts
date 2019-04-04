@@ -41,6 +41,10 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: './modules/contact/contact.module#ContactModule'
       },
+      {
+        path: 'about',
+        loadChildren: './modules/about/about.module#AboutModule'
+      },
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BusinessService } from "./../../../core/services/business.service";
@@ -18,7 +18,8 @@ export class SideBarComponent implements OnInit {
   'lorem Ipsem',
  ]
 
- public item : any
+ @Input() item: any;
+ @Input() isLoading: boolean;
  public id: string
 
   constructor(
@@ -27,10 +28,6 @@ export class SideBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params.id
-    this.businessService.get(this.id).subscribe( data =>{ 
-      this.item = data
-    })
   }
 
 }

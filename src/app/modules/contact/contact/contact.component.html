@@ -1,38 +1,6 @@
-<section class="container contact">
-  <div class="title">Contact Us</div>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="address">
-        <p> Theodore Lowe</p>  
-        <p>Ap #867-859 Sit Rd. </p>
-        <p> Azusa New York 39531</p>
-        <p>(793) 151-6230 </p>
-      </div>
-     <!-- <div class="contact-form">
-        <form (ngSubmit)="processForm()">
-          <div class="form-group">
-            <input type="text" class="form-control" id="" name="name" placeholder="Name" [(ngModel)]="name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" id="" name="email" placeholder="Email" [(ngModel)]="email" required>
-          </div>
-          <div class="form-group">
-            <textarea 
-              class="form-control" 
-              placeholder="Message" 
-              name="message"
-              id="exampleFormControlTextarea1" 
-              rows="3" 
-              [(ngModel)]="message"
-              required>
-            </textarea>
-          </div>
-          <p>All fields are required</p>
-          <button class="btn btn-primary" type="submit">Send</button>
-        </form>
-      </div>-->
-    </div>
-    <div class="col-12 col-md-6">
+<section class="contact">
+  <div class="header">
+    <div class="map-wrapper">
       <div class="map">
         <div class="mapouter">
           <div class="gmap_canvas">
@@ -43,21 +11,18 @@
       </div>
     </div>
   </div>
-  <div class="modal" tabindex="-1" role="dialog" *ngIf="showModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Message Sent</h5>
-          <button type="button" class="close" (click)="closeModal()" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Your message has been sent successfully</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
-        </div>
+  <div class="address container">
+    <div class="row">
+      <div class="col-12 col-md-6 details">
+        <div class="title">Contact Us</div>
+        <p> Theodore Lowe</p>  
+        <p>Ap #867-859 Sit Rd. </p>
+        <p> Azusa New York 39531</p>
+        <p>(793) 151-6230 </p>
+        <p><a href="mailto:firstouchindia777@gmail.com">Contact here</a></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <img src="/assets/images/contact-us.png">
       </div>
     </div>
   </div>

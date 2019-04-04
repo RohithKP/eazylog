@@ -12,6 +12,7 @@ export class ViewDetailsComponent implements OnInit {
   public item 
   public id: string
   public activeTab = 1
+  public isLoading : boolean= true;
   public embedCode = '<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>';
 
   constructor(
@@ -23,6 +24,7 @@ export class ViewDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params.id
     this.businessService.get(this.id).subscribe( data =>{ 
       this.item = data
+      this.isLoading = false
     })
   }
 
