@@ -4,6 +4,7 @@
     font-size: 14px;
     position: relative;
     box-shadow: none;
+    margin-bottom: -18px;
     .title {
         font-weight: 900;
         padding-top: 8px;
@@ -11,8 +12,28 @@
         font-size: 34px;
         color: #000;
     }
-    .map-wrapper {
-        margin-top: -10px;
+    .image-wrapper {
+        padding-top: 30px;
+        background: url(/assets/images/contact-us.png) no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        > span {
+            position: absolute;
+            top: 50%;
+            right: 34%;
+            font-size: 5vw;
+            font-weight: 1000;
+            color: #000;
+            text-transform: uppercase;
+            @media(max-width: 768px) {
+                position: unset;
+                margin-top: 30px;
+                font-size: 10vw;
+            }
+        }
     }
     .map {
         .mapouter, .gmap_canvas {
@@ -22,13 +43,18 @@
     .address {
         margin: 20px auto;
         p {
-            font-size: 14px;
+            font-size: 20px;
         }
         img {
             width: 200px;
         }
     }
-    .map, .contact-form {
+    .map {
+        @media(min-width: 768px) {
+            margin-top: -20px;
+        }
+    }
+    .contact-form {
         margin: 10px 0;
     }
     .contact-form {
@@ -46,5 +72,22 @@
     .modal {
         top: 80px;
         display: block;
+    }
+    .text {
+        margin-top: 18%;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .details {
+        padding-left: 60px;
+        @media (min-width: 769px) {
+            display: flex;
+            -webkit-display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
+        @media(max-width: 768px) {
+            padding-left: 30px;
+        }
     }
 }
