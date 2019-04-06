@@ -1,7 +1,7 @@
 <div id="list-item" class="container">
   <h2 class="header-title text-center">Featured</h2>
   <div class="row featured-wrapper">
-    <div class="col-md-3 col-sm-6 col-12 item-mb" *ngFor="let cat of featured | async">
+    <div class="col-md-6 col-lg-3 col-12 item-mb" *ngFor="let cat of featured | async">
       <a class="card" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
           <img src="{{cat.imgUrl}}" />

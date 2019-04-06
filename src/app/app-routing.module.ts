@@ -46,6 +46,10 @@ const routes: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
       },
+      {
+        path: 'about',
+        loadChildren: './modules/about/about.module#AboutModule'
+      },
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
+import { PipesModule } from '../../pipes/pipes.module';
 import { SearchComponent } from './search.component';
 import { SearchRoutingModule } from './search-routing.module';
 import { CategoriesComponent } from './categories/categories.component';
@@ -14,7 +14,8 @@ import { ViewComponent } from './view/view.component';
     CommonModule,
     SearchRoutingModule,
     RouterModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    PipesModule
   ],
   declarations: [
     SearchComponent,
