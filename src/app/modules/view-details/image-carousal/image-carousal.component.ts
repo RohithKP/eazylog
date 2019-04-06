@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BusinessService } from "./../../../core/services/business.service";
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'image-carousal',
@@ -20,10 +18,7 @@ export class ImageCarousalComponent implements OnInit {
 
   @Input() item: any;
 
-  constructor(
-    private businessService:BusinessService,
-    private route: ActivatedRoute
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
     this.images = this.item.gallery;

@@ -17,7 +17,6 @@ global['window'] = win;
 global['document'] = win.document;
 
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('../../dist/server/main');
-console.log(AppServerModuleNgFactory)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
@@ -41,7 +40,6 @@ app.get('/*', (req, res) => {
     if (html) {
       res.send(html);
     } else {
-      console.error(err);
       res.send(err);
     }
   });
