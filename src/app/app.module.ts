@@ -26,6 +26,7 @@ import { SearchModule } from './modules/search/search.module';
 import { ViewDetailsModule } from './modules/view-details/view-details.module';
 import { RegisterModule } from './modules/register/register.module';
 import { ContactModule } from './modules/contact/contact.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -50,6 +51,7 @@ export const firebaseConfig = {
     ViewDetailsModule,
     RegisterModule,
     ContactModule,
+    DashboardModule,
 
 
     // core & shared

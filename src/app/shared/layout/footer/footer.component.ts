@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CategoryService } from "../../../core/services/category.service";
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  public categories: Observable<any>
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
+    this.categories = this.categoryService.getAll();
   }
 
 }

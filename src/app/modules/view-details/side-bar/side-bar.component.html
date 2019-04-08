@@ -16,7 +16,7 @@
       <div class="item">
         <span class="value">
           <i class="fas fa-location-arrow"></i>
-          <a routerLink="/view/category/{{ item.locationName | replaceURL | lowercase }}">{{ item.locationName }}</a>
+          <a routerLink="/view/location/{{ item.locationName | replaceURL | lowercase }}">{{ item.locationName }}</a>
         </span>
       </div>
       <div class="item">
@@ -29,6 +29,12 @@
         <span class="value">
           <i class="fas fa-phone-square"></i>
           {{item.phone}}
+        </span>
+      </div>
+      <div class="item">
+        <span class="value">
+          <i class="fas fa-link"></i>
+          {{item.website}}
         </span>
       </div>
       <div class="item">

@@ -16,6 +16,16 @@ footer {
             color: #fff;
             font-weight: 500;
         }
+        p {
+            color: #fff;
+        }
+    }
+    .row {
+        > div {
+            @media(max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
     }
     .footer-bottom {
         color: rgba(255,255,255,0.6);
