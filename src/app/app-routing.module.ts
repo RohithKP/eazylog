@@ -32,7 +32,7 @@ const routes: Routes = [
         canActivate: [AuthGuard]
       },
       {
-        path: 'search',
+        path: 'search/:keyword/:category/:location',
         loadChildren: './modules/search/search.module#SearchModule'
       }, 
       {

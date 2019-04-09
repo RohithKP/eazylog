@@ -16,9 +16,9 @@ import { CategoryService } from "./../../core/services/category.service";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   private geocoder: any;
-  public keyword: string;
-  public location: string;
-  public category: string;
+  public keyword: string = 'keyword';
+  public location: string = 'location';
+  public category: string = 'category';
   public items: Observable<any[]>;
   public categories: any;
   public cat = [];
