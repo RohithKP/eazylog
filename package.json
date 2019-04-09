@@ -13,7 +13,7 @@
     "build": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js",
     "dev-server": "set NODE_ENV=dev&& nodemon --inspect local.js",
-    "fe-serve": "ng serve& set NODE_ENV=dev& node local.js"
+    "fe-serve": "start ng serve& set NODE_ENV=dev& node local.js"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +39,9 @@
     "bootstrap": "^4.1.3",
     "core-js": "^2.6.5",
     "cors": "~2.8.4",
+    "dotenv": "^7.0.0",
     "firebase": "^5.4.2",
+    "firebase-admin": "^7.2.0",
     "font-awesome": "^4.7.0",
     "mongoose": "^5.4.13",
     "ngx-accordion": "0.0.17",
@@ -54,7 +56,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.7",
-    "@angular/cli": "^7.3.3",
+    "@angular/cli": "^7.3.8",
     "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "^6.1.10",
     "@types/jasmine": "^3.3.9",
