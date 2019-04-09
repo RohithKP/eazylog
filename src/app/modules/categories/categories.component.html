@@ -1,12 +1,14 @@
 <div id="categories" class="container">
   <h2 class="header-title text-center">Top Categories</h2>
   <div class="row categories-wrapper">
-    <div class="col-12 col-md-2 item-mb" *ngFor="let cat of categories | async">
+    <div class="col-6 col-md-4 col-lg-2 item-mb" *ngFor="let cat of categories | async">
       <a class="card text-center" routerLink="/view/category/{{cat.id}}/{{cat.name | replaceURL | lowercase}}">
         <div>
-          <div><i class="fas fa-archive"></i></div>
+          <div class="icon">
+            <i class="fas fa-archive"></i>
+            <span class="total">{{cat.count}}</span>          
+          </div>
           <div><h3 class="title">{{cat.name}}</h3></div>
-          <div class="total">({{cat.count}})</div>
         </div>
       </a>
     </div>

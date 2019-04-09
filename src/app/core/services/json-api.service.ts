@@ -47,7 +47,7 @@ export class JsonApiService {
     private getBaseUrl() {
         const port = isDevMode() ? 3000 : location.port;
         return `${location.protocol}//${location.hostname +
-            (port ? ":" + port : "")}`;
+            (port ? ":" + port : "")}/api/v1`;
     }
 
     private handleError(error: any) {

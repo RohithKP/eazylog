@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'image-carousal',
@@ -13,18 +13,15 @@ export class ImageCarousalComponent implements OnInit {
   direction = 'right';
   directionToggle = true;
   autoplay = true;
-  avatars = '1234567891234'.split('').map((x, i) => {
-    const num = i;
-    // const num = Math.floor(Math.random() * 1000);
-    return {
-      url: `https://picsum.photos/1200/600/?${num}`,
-      title: `${num}`
-    };
-  });
+  images = [];
+  id: number;
 
-  constructor() { }
+  @Input() item: any;
+
+  constructor( ) { }
 
   ngOnInit() {
+    this.images = this.item.gallery;
   }
 
 }

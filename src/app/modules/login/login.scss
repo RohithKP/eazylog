@@ -1,6 +1,11 @@
 .login {
   margin-top: 90px;
   box-shadow: none;
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
   .header{
     text-align: center;
     font-size: 30px;

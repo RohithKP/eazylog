@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BusinessService } from "./../../../core/services/business.service";
@@ -10,13 +10,6 @@ import { BusinessService } from "./../../../core/services/business.service";
 })
 export class SideBarComponent implements OnInit {
 
- public tags = [
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
-  'lorem Ipsem',
- ]
  public locations = [
   'lorem Ipsem',
   'lorem Ipsem',
@@ -25,7 +18,12 @@ export class SideBarComponent implements OnInit {
   'lorem Ipsem',
  ]
 
+<<<<<<< HEAD
  public item : any
+=======
+ @Input() item: any;
+ @Input() isLoading: boolean;
+>>>>>>> c007540dfb0187c586896cc280f62137e9229772
  public id: string
 
   constructor(

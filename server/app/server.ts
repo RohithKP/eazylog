@@ -3,11 +3,10 @@ import 'reflect-metadata';
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
+enableProdMode();
 const server = require('./local-server');
 const express = server.express;
 export const app = server.app;
-
-enableProdMode();
 
 const domino = require('domino');
 const fs = require('fs');
@@ -41,7 +40,6 @@ app.get('/*', (req, res) => {
     if (html) {
       res.send(html);
     } else {
-      console.error(err);
       res.send(err);
     }
   });

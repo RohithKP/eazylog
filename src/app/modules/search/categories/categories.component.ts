@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from 'rxjs';
+import { CategoryService } from "../../../core/services/category.service";
 
 @Component({
   selector: "categories",
@@ -6,13 +8,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  public categories = [];
-  public locations = [];
-
-  constructor() {}
+  public categories: Observable<any>
+  public locations = []
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
-    this.categories = ["test", "test", "test3", "test4"];
+    this.categories = this.categoryService.getAll();
     this.locations = ["tvm", "Delhi", "Kochi"];
   }
 }

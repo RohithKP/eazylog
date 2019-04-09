@@ -1,16 +1,31 @@
 const Business = require('../models/category.model').Business;
-
+const category_controller = require('../controllers/category.controller');
 //Simple version, without validation or sanitation
 exports.create = function (req, res, next) {
     let business = new Business(
         {
-            ...req.body
+            ...req.body,
+            ...{
+                openingHours: JSON.parse(req.body.openingHours)
+            }
         }
     );
-    business.save(function (err) {
+    business.save(function (err, resObj) {
         if (err) {
             return next(err);
         }
+        resObj.collection.countDocuments({'category': resObj.category},(err, count) => {
+            if (err) {
+                res.send(err);
+                return;
+            }
+            category_controller.update({
+                params:{'name': resObj.category},
+                body: {
+                    count
+                }
+            }, res, next);
+        });
         res.send('business Created successfully')
     })
 };
