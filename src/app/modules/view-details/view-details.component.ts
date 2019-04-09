@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-<<<<<<< HEAD
-import { Observable } from 'rxjs';
-=======
->>>>>>> c007540dfb0187c586896cc280f62137e9229772
 import { BusinessService } from "./../../core/services/business.service";
 
 @Component({

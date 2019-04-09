@@ -18,12 +18,8 @@ export class SideBarComponent implements OnInit {
   'lorem Ipsem',
  ]
 
-<<<<<<< HEAD
- public item : any
-=======
  @Input() item: any;
  @Input() isLoading: boolean;
->>>>>>> c007540dfb0187c586896cc280f62137e9229772
  public id: string
 
   constructor(
