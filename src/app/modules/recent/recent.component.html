@@ -4,7 +4,7 @@
     <div class="col-md-3 col-sm-6 col-12 item-mb" *ngFor="let cat of recent | async">
       <a class="card" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
-          <img src="{{cat.imgUrl}}" />
+          <img img-preloader="{{cat.imgUrl}}" />
           <span class="category">{{cat.category.name}}</span>
           <span class="overlay"></span>
           <span class="link-hover"></span>

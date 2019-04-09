@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-//import { PipesModule } from './pipes/pipes.module';
 import { LayoutModule } from './layout/layout.module';
 import { GooglePlacesDirective } from './directives/google-places.directive';
+import { ImagePreloader } from './directives/image-placeholder.directive';
 
 @NgModule({
     imports: [
         CommonModule,
-        LayoutModule,
-        //PipesModule
+        LayoutModule
     ],
     declarations: [
         GooglePlacesDirective,
+        ImagePreloader
     ],
     exports: [
         CommonModule,
         LayoutModule,
         GooglePlacesDirective,
-        //PipesModule
+        ImagePreloader
     ]
 })
 export class SharedModule { }

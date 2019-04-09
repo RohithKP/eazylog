@@ -14,7 +14,6 @@ export class FeaturedComponent implements OnInit {
 
   ngOnInit() {
     this.featured = this.businessService.getAll();
-    console.log(this.featured)
   }
 
 

@@ -8,9 +8,7 @@ import { httpOptions } from "../app-config";
 
 @Injectable()
 export class JsonApiService {
-    constructor(private httpClient: HttpClient) {
-        console.log(httpOptions);
-     }
+    constructor(private httpClient: HttpClient) { }
 
     get(url, params = {}): Observable<any> {
         let Params = new HttpParams();
