@@ -14,25 +14,12 @@
     [infiniteScrollThrottle]="1500"
     (scrolled)="onScrollDown()"
     *ngIf=" displayMode == 1">
-<<<<<<< HEAD
-    <div class="col-md-4 col-6" *ngFor="let item of items">
-=======
     <div class="col-md-4 col-12" *ngFor="let item of items">
       <a routerLink="/view-details/{{item._id}}/{{item.name | lowercase}}">
->>>>>>> c007540dfb0187c586896cc280f62137e9229772
       <div class="card">
         <div class="card-header">
           <div class="card-image">
             <img src="{{ item.imgUrl }}">
-<<<<<<< HEAD
-            <span class="category">{{ item.category }}</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <a class="card-title" routerLink="/view-details/{{item._id}}/{{item.name | lowercase}}">{{ item.name }}</a>
-          <div class="location">{{ item.location }}</div>
-          <div class="contact">{{ item.phone }}</div>
-=======
             <span class="category">{{ item.category.name }}</span>
           </div>
         </div>
@@ -40,7 +27,6 @@
           <div class="card-title">{{ item.name }}</div>
           <div class="contact">{{ item.phone }}</div>
           <div class="location">{{ item.locationName }}</div>
->>>>>>> c007540dfb0187c586896cc280f62137e9229772
         </div>
       </div>
       </a>
@@ -62,13 +48,8 @@
         </div>
         <div class="details col-md-8 col-8">
           <a class="title" routerLink="/view-details/{{item._id}}/{{item.name | lowercase}}">{{ item.name }}</a>
-<<<<<<< HEAD
-          <div class="location">{{ item.location }}</div>
-          <div class="contact">{{ item.phone }}</div>
-=======
           <div class="contact">{{ item.phone }}</div>
           <div class="location">{{ item.locationName }}</div>
->>>>>>> c007540dfb0187c586896cc280f62137e9229772
         </div>
       </div>
     </div>
