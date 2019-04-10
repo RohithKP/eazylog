@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../core/services'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from '../../core/services';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,13 +10,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
 
-  loginForm: FormGroup;
-  errorMessage: string = '';
+  public loginForm: FormGroup;
+  public errorMessage: string;
+  public successMessage: string;
+
 
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ) {
     this.createForm();
   }
@@ -57,5 +59,13 @@ export class LoginComponent {
       console.log(err);
       this.errorMessage = err.message;
     })
+  }
+
+  ngOnInit() {
+    let showToaster = JSON.parse(sessionStorage.getItem('registration'));
+    if(showToaster) {
+      sessionStorage.removeItem('registration');
+      this.successMessage = 'Registration success. Please Login';
+    }
   }
 }

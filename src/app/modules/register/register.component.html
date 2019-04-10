@@ -4,6 +4,7 @@
         <div class="logo">
           <img src="/assets/images/logo.png">
         </div>
+        <div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
         <form [formGroup]="registerForm" class="form">
           <div class="form-group">
             <input type="email" formControlName="email" class="input" placeholder="Email Address">

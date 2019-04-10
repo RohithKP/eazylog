@@ -13,6 +13,7 @@ import { HomeModule } from './modules/home/home.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 
 
 // angular firebase
@@ -64,6 +65,10 @@ export const firebaseConfig = {
     CarouselModule,
     InfiniteScrollModule,
     MatProgressBarModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+    }),
+    ToastContainerModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

@@ -22,6 +22,20 @@
     margin: 10px 0;
     margin-bottom: 0;
   }
+  .error-message {
+    background: #BD3533;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  .success-message {
+    background: #51a351;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
   .login-form-wrapper {
     display: flex;
     justify-content: center;

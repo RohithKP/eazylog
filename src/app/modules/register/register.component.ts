@@ -12,6 +12,8 @@ export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
   public submitted = false;
+  public errorMessage: string;
+
 
   constructor(private authService: AuthService,
     private router: Router, private formBuilder: FormBuilder) { }
@@ -28,12 +30,19 @@ export class RegisterComponent implements OnInit {
 
   public onSubmit() {
     this.submitted = true;
-    if(this.registerForm.valid) {
+    if(this.registerForm.controls.email.valid &&
+       this.registerForm.controls.password.valid &&
+       this.registerForm.controls.confirmPassword.valid &&
+       !this.registerForm.errors.notSame
+      ) {
       this.authService.doRegister({
         email: this.registerForm.controls.email.value,
         password: this.registerForm.controls.password.value
       }).then( () => {
+        sessionStorage.setItem('registration', 'true');
         this.router.navigate(['/login']);
+      }, err => {
+        this.errorMessage = err.message;
       })
     }
   }
@@ -44,5 +53,5 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required]],
       confirmPassword: ['', Validators.required],
       }, {validator: this.checkPasswords });
-  }
+    }
 }

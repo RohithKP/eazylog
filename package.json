@@ -48,6 +48,7 @@
     "ngx-bootstrap": "^3.0.1",
     "ngx-hm-carousel": "^1.6.5-bata.1",
     "ngx-infinite-scroll": "^6.0.0",
+    "ngx-toastr": "^10.0.2",
     "npm": "^6.9.0",
     "rxjs": "^6.4.0",
     "ts-loader": "4.2.0",
