@@ -18,7 +18,6 @@ export class CategoryService {
     }
     
     add(category): Observable<any> {
-        console.log(category);
         return this.jsonApiService.post(category, `/categories/create`);
     }
 

@@ -7,6 +7,7 @@ import { FeaturedRoutingModule } from './featured.routing';
 import { PipesModule } from '../../pipes/pipes.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FeaturedRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    SharedModule
   ],
   declarations: [
     FeaturedComponent

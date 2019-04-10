@@ -10,7 +10,6 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: './modules/home/home.module#HomeModule',
-        canActivate: [AuthGuard]
       },
       {
         path: 'register',
@@ -19,17 +18,14 @@ const routes: Routes = [
       {
         path: 'view/category/:name',
         loadChildren: './modules/search/search.module#SearchModule',
-        canActivate: [AuthGuard]
       }, 
       {
         path: 'view/location/:id/:name',
         loadChildren: './modules/search/search.module#SearchModule',
-        canActivate: [AuthGuard]
       },
       {
         path: 'view/tag/:id/:name',
-        loadChildren: './modules/search/search.module#SearchModule',
-        canActivate: [AuthGuard]
+        loadChildren: './modules/search/search.module#SearchModule'
       },
       {
         path: 'search/:keyword/:category/:location',
@@ -37,13 +33,11 @@ const routes: Routes = [
       }, 
       {
         path: 'view-details/:id/:name',
-        loadChildren: './modules/view-details/view-details.module#ViewDetailsModule',
-        canActivate: [AuthGuard]
+        loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
       },
       {
         path: 'contact',
-        loadChildren: './modules/contact/contact.module#ContactModule',
-        canActivate: [AuthGuard]
+        loadChildren: './modules/contact/contact.module#ContactModule'
       },
       {
         path: '',

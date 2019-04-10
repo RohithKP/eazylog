@@ -4,6 +4,8 @@
       <div class="logo">
         <img src="/assets/images/logo.png">
       </div>
+      <div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
+      <div class="success-message" *ngIf="successMessage">{{successMessage}}</div>
       <form [formGroup]="loginForm" class="form">
         <div class="form-group">
           <input type="email" formControlName="email" class="input" placeholder="Email Address">

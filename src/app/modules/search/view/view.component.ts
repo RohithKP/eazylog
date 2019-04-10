@@ -37,7 +37,6 @@ export class ViewComponent implements OnInit {
       this.tempItems[i] = this.items[this.count]
       this.count++;
     }  
-    console.log(this.items)
   }
 
 }

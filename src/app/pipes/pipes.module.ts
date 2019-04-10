@@ -12,7 +12,5 @@ import { SafeHTMLPipe } from './safe-html.pipe';
 
 })
 export class PipesModule { 
-  constructor() {
-    console.log('test')
-  }
+  constructor() { }
 }

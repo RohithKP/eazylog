@@ -77,7 +77,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     var latlng = new google.maps.LatLng(lat, lng);
     this.geocoder.geocode({ latLng: latlng }, (results, status) => {
       if (status == google.maps.GeocoderStatus.OK) {
-        console.log(results);
         if (results[1]) {
           //formatted address
           this.location = results[0].formatted_address;
