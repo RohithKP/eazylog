@@ -10,7 +10,7 @@
             <label class="error" *ngIf="submitted && f.email.invalid&& f.email.errors.required">Email is required</label>
             <label class="error" *ngIf="submitted && f.email.invalid && f.email.errors.email">Enter email in correct format</label>
           </div>
-          <div class="form-group">
+          <div class="form-group"> 
             <input type="password" class="input" formControlName="password" placeholder="Password">
             <label class="error" *ngIf="submitted && f.password.invalid ">Password is required</label>
           </div>
