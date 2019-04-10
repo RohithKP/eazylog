@@ -12,8 +12,7 @@ export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
   public submitted = false;
-  private email: string;
-  private password: string ;
+
   constructor(private authService: AuthService,
     private router: Router, private formBuilder: FormBuilder) { }
 
@@ -29,12 +28,14 @@ export class RegisterComponent implements OnInit {
 
   public onSubmit() {
     this.submitted = true;
-    this.authService.doRegister({
-      email: this.email,
-      password: this.password
-    }).then( () => {
-      this.router.navigate(['/login']);
-    })
+    if(this.registerForm.valid) {
+      this.authService.doRegister({
+        email: this.registerForm.controls.email.value,
+        password: this.registerForm.controls.password.value
+      }).then( () => {
+        this.router.navigate(['/login']);
+      })
+    }
   }
  
   ngOnInit() {

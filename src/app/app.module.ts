@@ -5,13 +5,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { ReplaceURL } from './shared/replace-url.pipe';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeModule } from './modules/home/home.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 // angular firebase
@@ -45,6 +46,7 @@ export const firebaseConfig = {
   imports: [
     CommonModule,
     NgtUniversalModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
     SearchModule,
@@ -61,6 +63,7 @@ export const firebaseConfig = {
     BsDropdownModule.forRoot(),
     CarouselModule,
     InfiniteScrollModule,
+    MatProgressBarModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
