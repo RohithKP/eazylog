@@ -3,10 +3,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 
 body {
   background-color: rgba(196, 196, 196, 0.2);
   max-width: 100%;
+  font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
 }
 main {
@@ -26,10 +29,10 @@ nav, section, .card {
   border: 1px solid  #007bff;
   color: #007bff;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 30px;
+  border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 3px;
   &:hover {
     background: #007bff;
     border: 1px solid #007bff;

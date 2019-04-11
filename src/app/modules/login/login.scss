@@ -71,6 +71,17 @@
           color: #fff;
         }
       }
+      .btn-link-lg {
+        width: 100%;
+        &.red {
+          border-color: #dc3545 !important;
+          color: #dc3545 !important;
+          &:hover {
+            color: #fff !important;
+            background: #dc3545 !important;
+          }
+        }
+      }
       .social-login {
         margin: 10px 0;
       }

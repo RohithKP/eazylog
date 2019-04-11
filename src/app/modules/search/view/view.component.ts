@@ -13,6 +13,7 @@ export class ViewComponent implements OnInit {
   public tempItems = []
   public count = 0
   public displayMode = 1
+  public isLoading = true
 
   constructor( private businessService:BusinessService ) { }
 
@@ -33,6 +34,9 @@ export class ViewComponent implements OnInit {
     this.businessService.getAll().subscribe( item => {
       this.items = item;
     })  
+    if(this.items.length > 0) {
+      this.isLoading = true;
+    }
     for(let i=0; i<6; i++) {
       this.tempItems[i] = this.items[this.count]
       this.count++;

@@ -20,7 +20,7 @@
             <label class="error" *ngIf="submitted && f.confirmPassword.invalid ">Confirm password is required</label>
             <label class="error" *ngIf="submitted && f.password.valid && f.confirmPassword.valid && registerForm.errors.notSame">Password and confrim password must be same</label>
           </div>
-          <button type="submit" (click)="onSubmit()" class="btn btn-register">Register</button>
+          <button type="submit" (click)="onSubmit()" class="btn btn-link-lg">Register</button>
         </form>
       </div>
     </div>
