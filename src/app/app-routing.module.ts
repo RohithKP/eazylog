@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: './modules/search/search.module#SearchModule'
       },
       {
+        path: 'search/:keyword/:category/:location',
+        loadChildren: './modules/search/search.module#SearchModule'
+      }, 
+      {
         path: 'view-details/:id/:name',
         loadChildren: './modules/view-details/view-details.module#ViewDetailsModule'
       },
@@ -43,6 +47,10 @@ const routes: Routes = [
       {
         path: 'about',
         loadChildren: './modules/about/about.module#AboutModule'
+      },
+      {
+        path: 'dashboard',
+        loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
       },
 ];
 

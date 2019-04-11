@@ -242,5 +242,9 @@
 .search-header {
   background-image: url(/assets/images/header.jpg);
   background-size: cover;
-  padding: 80px 0;
+  min-height: 600px;
+  display: flex;
+  -webkit-display: flex;
+  justify-content: center;
+  align-items: center;
 }

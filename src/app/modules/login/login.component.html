@@ -4,20 +4,21 @@
       <div class="logo">
         <img src="/assets/images/logo.png">
       </div>
+      <div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
+      <div class="success-message" *ngIf="successMessage">{{successMessage}}</div>
       <form [formGroup]="loginForm" class="form">
         <div class="form-group">
           <input type="email" formControlName="email" class="input" placeholder="Email Address">
         </div>
         <div class="form-group">
           <input type="password" class="input" formControlName="password" placeholder="Password">
-          <label class="error">{{errorMessage}}</label>
         </div>
-        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-login">Login</button>
+        <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-link-lg">Login</button>
       </form>
       <p align="center">OR</p>
       <div class="social-login">
         <!-- <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button> -->
-        <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+        <button type="button" class="btn btn-link-lg red" (click)="tryGoogleLogin()">Login with Google</button>
         <!-- <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button> -->
       </div>
       <div class="register-link">No account yet? <a routerLink="/register">Create an account</a></div>

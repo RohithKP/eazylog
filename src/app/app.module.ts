@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { ReplaceURL } from './shared/replace-url.pipe';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeModule } from './modules/home/home.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 
 
 // angular firebase
@@ -26,6 +28,7 @@ import { SearchModule } from './modules/search/search.module';
 import { ViewDetailsModule } from './modules/view-details/view-details.module';
 import { RegisterModule } from './modules/register/register.module';
 import { ContactModule } from './modules/contact/contact.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBM3HS29Pjt9cCzsvEHevwvVjw5lctbrpA",
@@ -44,12 +47,14 @@ export const firebaseConfig = {
   imports: [
     CommonModule,
     NgtUniversalModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
     SearchModule,
     ViewDetailsModule,
     RegisterModule,
     ContactModule,
+    DashboardModule,
 
 
     // core & shared
@@ -59,6 +64,11 @@ export const firebaseConfig = {
     BsDropdownModule.forRoot(),
     CarouselModule,
     InfiniteScrollModule,
+    MatProgressBarModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+    }),
+    ToastContainerModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

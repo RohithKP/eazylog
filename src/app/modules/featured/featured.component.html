@@ -1,13 +1,13 @@
 <div id="list-item" class="container">
   <h2 class="header-title text-center">Featured</h2>
   <div class="row featured-wrapper">
-    <div class="col-md-6 col-lg-3 col-12 item-mb" *ngFor="let cat of featured | async">
-      <a class="card" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
+    <div class="col-md-6 col-lg-3 col-12 item-mb" *ngFor="let cat of featured | async; let i =index">
+      <a class="card" *ngIf="i <= 7" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
           <img img-preloader="{{cat.imgUrl}}" />
           <span class="category">{{cat.category.name}}</span>
           <span class="overlay"></span>
-          <span class="link-hover"></span>
+          <span class="link-hover"></span> 
         </div>
         <div class="card-body">
           <h3 class="title">{{cat.name}}</h3>
@@ -18,6 +18,6 @@
       </a>
     </div>
   </div>
-  <div class="align-center"><a class="btn-link-lg" routerLink="/view/category/all">View More</a></div>
+  <div class="align-center"><a routerLink="/view/category/all"><button class="btn-link-lg">View More</button></a></div>
 </div>
   

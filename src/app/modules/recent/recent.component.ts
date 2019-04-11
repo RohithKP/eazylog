@@ -9,12 +9,20 @@ import { BusinessService } from "./../../core/services/business.service";
 })
 export class RecentComponent implements OnInit {
 
-  public recent: Observable <any>
+  public recent = [];
+  public loading: boolean = true;
 
-  constructor( private businessService:BusinessService) { }
+  constructor( private businessService:BusinessService) { 
+    this.loading = true;
+  }
 
   ngOnInit() {
-    this.recent = this.businessService.getAll()
+    this.businessService.getAll().subscribe( data => {
+      this.recent = data;
+    })
+    if(this.recent.length > 0) {
+      this.loading = false;
+    }
   }
 
 }

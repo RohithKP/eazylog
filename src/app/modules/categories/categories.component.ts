@@ -8,10 +8,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  public categories: Observable<any>
-  constructor(private categoryService: CategoryService) {}
+  public loading:boolean = true;
+  public categories = [];
+  constructor(private categoryService: CategoryService) {
+  }
 
   ngOnInit() {
-    this.categories = this.categoryService.getAll();
+    this.categoryService.getAll().subscribe( data => {
+      this.categories = data
+    });
+    if(this.categories.length > 0) {
+      this.loading = false;
+    }
   }
 }

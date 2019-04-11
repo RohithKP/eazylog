@@ -7,13 +7,18 @@
       <i class="fa fa-list-ul" aria-hidden="true" (click)="setDisplayMode(2)" [ngClass]="{ active:  displayMode == 2 }"></i>
     </span>
   </div>
+  <div class="loader" *ngIf="isLoading">
+    <div class="lds-ellipsis">
+      <div></div><div></div><div></div><div></div>
+    </div>
+  </div>
   <div class="row grid-view" 
     infinite-scroll
     [infiniteScrollDistance]="2"
     [infiniteScrollUpDistance]="1.5"
     [infiniteScrollThrottle]="1500"
     (scrolled)="onScrollDown()"
-    *ngIf=" displayMode == 1">
+    *ngIf=" displayMode == 1 && !isLoading">
     <div class="col-md-4 col-12" *ngFor="let item of items">
       <a routerLink="/view-details/{{item._id}}/{{item.name | lowercase}}">
       <div class="card">
@@ -39,7 +44,7 @@
     [infiniteScrollUpDistance]="1.5"
     [infiniteScrollThrottle]="1000"
     (scrolled)="onScrollDown()"
-    *ngIf=" displayMode == 2">
+    *ngIf=" displayMode == 2 && !isLoading">
     <div class="item-list" *ngFor="let item of items">
       <div class="row">
         <div class="col-md-4 col-4 card-image">

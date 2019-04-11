@@ -6,6 +6,8 @@ import { ViewEncapsulation } from "@angular/core";
 import { Observable } from "rxjs";
 import { AngularFirestore } from "angularfire2/firestore";
 
+import { CategoryService } from "./../../core/services/category.service";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -14,10 +16,12 @@ import { AngularFirestore } from "angularfire2/firestore";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   private geocoder: any;
-  public keyword: string;
-  public location: string;
-  public category: string;
+  public keyword: string = 'keyword';
+  public location: string = 'location';
+  public category: string = 'category';
   public items: Observable<any[]>;
+  public categories: any;
+  public cat = [];
   public states: string[];
   API_KEY: string = "AIzaSyDOC3MKpklqEmCUE9GUpIPaXXYnsRuTEpA";
   selectedAddress: any;
@@ -26,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.selectedAddress = address.description;
   }
 
-  constructor(db: AngularFirestore) {
+  constructor(db: AngularFirestore, private categoryService: CategoryService) {
     this.items = db.collection("/items").valueChanges();
     this.category = "";
     this.states = [
@@ -42,6 +46,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.categoryService.getAll().subscribe( item => {
+      this.categories = item;
+    });
+    this.categories.forEach( item => {
+      this.cat.push(item.name)
+    })
   }
   ngAfterViewInit(): void {
     this.geocoder = new google.maps.Geocoder();

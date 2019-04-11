@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from '@angular/router';
 
+import { PipesModule } from '../../pipes/pipes.module';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -13,7 +14,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     imports: [
         CollapseModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        PipesModule
     ],
     exports: [
         NavComponent,

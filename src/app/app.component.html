@@ -1,5 +1,16 @@
 <app-nav></app-nav>
 <main>
-    <router-outlet></router-outlet>
+    <div class="router-loader" *ngIf="isLoading">
+        <mat-progress-bar
+            class="example-margin"
+            [color]="color"
+            [mode]="mode"
+            [value]="value"
+            [bufferValue]="bufferValue">
+        </mat-progress-bar>
+    </div>
+    <div *ngIf="!isLoading">
+        <router-outlet></router-outlet>
+    </div>
 </main>
 <app-footer></app-footer>

@@ -4,9 +4,14 @@ $transition_time:.2s;
   color:white;
   margin: -12px;
   margin-top: 0;
+  
   .content {
     display: flex;
- 
+
+    @media(max-width: 768px) {
+      max-height: 200px;
+    }
+    
     .item {
       width: 100%;
       padding: .5em;
