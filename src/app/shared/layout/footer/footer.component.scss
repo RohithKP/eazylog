@@ -18,12 +18,22 @@ footer {
         }
         p {
             color: #fff;
+            font-size: 14px;
         }
     }
     .row {
         > div {
             @media(max-width: 768px) {
                 margin-bottom: 20px;
+            }
+        }
+    }
+    .social-links {
+        a {
+            font-size: 30px;
+            margin-right: 10px;
+            &:last-of-type {
+                margin: 0;
             }
         }
     }

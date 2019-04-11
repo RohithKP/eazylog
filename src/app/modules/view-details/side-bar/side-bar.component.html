@@ -1,47 +1,49 @@
-<div class="loader" *ngIf="isLoading">
-  <div class="lds-ellipsis">
-    <div></div><div></div><div></div><div></div>
-  </div>
-</div>
-<div *ngIf="!isLoading">
+<div>
   <section class="side-bar__info">
     <div class="title"><i class="fas fa-info-circle"></i>Info</div>
     <div class="info">
-      <div class="item">
-        <span class="value">
-          <i class="far fa-folder"></i>
-          <a routerLink="/view/category/{{ item.category.name | replaceURL | lowercase}}">{{ item.category.name}}</a>
-        </span>
+      <div *ngIf="!isLoading">
+        <div class="item">
+          <span class="value">
+            <i class="far fa-folder"></i>
+            <a routerLink="/view/category/{{ item.category.name | replaceURL | lowercase}}">{{ item.category.name}}</a>
+          </span>
+        </div>
+        <div class="item">
+          <span class="value">
+            <i class="fas fa-location-arrow"></i>
+            <a routerLink="/view/location/{{ item.locationName | replaceURL | lowercase }}">{{ item.locationName }}</a>
+          </span>
+        </div>
+        <div class="item">
+          <span class="value">
+            <i class="fas fa-envelope"></i>
+            {{item.email}}
+          </span>
+        </div>
+        <div class="item">
+          <span class="value">
+            <i class="fas fa-phone-square"></i>
+            {{item.phone}}
+          </span>
+        </div>
+        <div class="item">
+          <span class="value">
+            <i class="fas fa-link"></i>
+            {{item.website}}
+          </span>
+        </div>
+        <div class="item">
+          <span class="value">
+            <i class="far fa-eye"></i>    
+            {{item.views}}
+          </span>
+        </div>
       </div>
-      <div class="item">
-        <span class="value">
-          <i class="fas fa-location-arrow"></i>
-          <a routerLink="/view/location/{{ item.locationName | replaceURL | lowercase }}">{{ item.locationName }}</a>
-        </span>
-      </div>
-      <div class="item">
-        <span class="value">
-          <i class="fas fa-envelope"></i>
-          {{item.email}}
-        </span>
-      </div>
-      <div class="item">
-        <span class="value">
-          <i class="fas fa-phone-square"></i>
-          {{item.phone}}
-        </span>
-      </div>
-      <div class="item">
-        <span class="value">
-          <i class="fas fa-link"></i>
-          {{item.website}}
-        </span>
-      </div>
-      <div class="item">
-        <span class="value">
-          <i class="far fa-eye"></i>    
-          {{item.views}}
-        </span>
+      <div class="loader" *ngIf="isLoading">
+        <div class="lds-ellipsis">
+          <div></div><div></div><div></div><div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -54,9 +56,14 @@
       <div class="item">{{ item.address.state }}</div>
       <div class="item">{{ item.address.zip }}</div>
     </div>
+    <div class="loader" *ngIf="isLoading">
+      <div class="lds-ellipsis">
+        <div></div><div></div><div></div><div></div>
+      </div>
+    </div>
   </section>
   <section class="side-bar__map">
-    <div class="mapouter">
+    <div class="mapouter" *ngIf="!isLoading">
       <div class="gmap_canvas">
         <iframe 
           width="100%" 
@@ -70,6 +77,11 @@
         </iframe>
       </div>
       <style>.mapouter{text-align:right;height:250px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:100%;}</style>
+    </div>
+    <div class="loader" *ngIf="isLoading">
+      <div class="lds-ellipsis">
+        <div></div><div></div><div></div><div></div>
+      </div>
     </div>
   </section>
   <section class="side-bar__menu">
@@ -86,6 +98,11 @@
     <div class="locations">
       <div class="title"><i class="fas fa-location-arrow"></i>Top locations</div>
       <a routerLink="/view/location/{{location}}" *ngFor="let location of locations" class="location">{{ location }}</a>
+      <div class="loader" *ngIf="isLoading">
+        <div class="lds-ellipsis">
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
