@@ -35,7 +35,6 @@ let business = new Schema({
     tags: [String]
 });
 
-// Export the model
 module.exports = {
     Categories: mongoose.model('Categories', categories),
     Business: mongoose.model('Business', business)

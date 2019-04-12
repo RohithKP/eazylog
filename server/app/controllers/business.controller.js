@@ -58,3 +58,10 @@ exports.getAll = function (req, res, next) {
         res.send(business);
     })
 };
+
+exports.getTopLocations =  function (req, res, next) {
+    Business.distinct('locationName', function (err, locations) {
+        if (err) return next(err);
+        res.send(locations);
+    })
+};

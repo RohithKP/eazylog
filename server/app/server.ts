@@ -13,6 +13,9 @@ const fs = require('fs');
 const path = require('path');
 const template = fs.readFileSync(path.join(process.cwd(), 'dist', 'browser', 'index.html')).toString();
 const win = domino.createWindow(template);
+const MockBrowser = require('mock-browser').mocks.MockBrowser;
+const mock = new MockBrowser();
+global['navigator'] = mock.getNavigator();
 global['window'] = win;
 global['document'] = win.document;
 

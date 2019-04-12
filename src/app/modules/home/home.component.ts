@@ -4,7 +4,6 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { ViewEncapsulation } from "@angular/core";
 
 import { Observable } from "rxjs";
-import { AngularFirestore } from "angularfire2/firestore";
 
 import { CategoryService } from "./../../core/services/category.service";
 
@@ -30,8 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.selectedAddress = address.description;
   }
 
-  constructor(db: AngularFirestore, private categoryService: CategoryService) {
-    this.items = db.collection("/items").valueChanges();
+  constructor(private categoryService: CategoryService) {
     this.category = "";
     this.states = [
       "Alabama",

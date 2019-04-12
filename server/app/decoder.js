@@ -1,5 +1,4 @@
 var admin = require("firebase-admin");
-const path = require('path');
 
 admin.initializeApp({
     credential: admin.credential.cert({

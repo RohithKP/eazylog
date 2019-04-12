@@ -17,9 +17,8 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 
 
 // angular firebase
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
@@ -71,7 +70,6 @@ export const firebaseConfig = {
     ToastContainerModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
     AngularFireAuthModule,
     TypeaheadModule.forRoot()
   ],
