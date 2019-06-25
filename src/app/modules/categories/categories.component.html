@@ -7,9 +7,9 @@
             <div>
               <div class="icon">
                 <i class="fas fa-archive"></i>
-                <span class="total">{{cat.count}}</span>          
+                <span class="total">0</span>          
               </div>
-              <div><h3 class="title">{{cat.name}}</h3></div>
+              <div><h3 class="title">loading..</h3></div>
             </div>
           </a> 
       </div>
@@ -18,9 +18,9 @@
           <div>
             <div class="icon">
               <i class="fas fa-archive"></i>
-              <span class="total">{{cat.count}}</span>          
+              <span class="total">0</span>          
             </div>
-            <div><h3 class="title">{{cat.name}}</h3></div>
+            <div><h3 class="title">loading..</h3></div>
           </div>
         </a> 
       </div>
@@ -29,9 +29,9 @@
           <div>
             <div class="icon">
               <i class="fas fa-archive"></i>
-              <span class="total">{{cat.count}}</span>          
+              <span class="total">0</span>          
             </div>
-            <div><h3 class="title">{{cat.name}}</h3></div>
+            <div><h3 class="title">loading..</h3></div>
           </div>
         </a> 
       </div>
@@ -40,9 +40,9 @@
           <div>
             <div class="icon">
               <i class="fas fa-archive"></i>
-              <span class="total">{{cat.count}}</span>          
+              <span class="total">0</span>          
             </div>
-            <div><h3 class="title">{{cat.name}}</h3></div>
+            <div><h3 class="title">loading..</h3></div>
           </div>
         </a>
       </div> 
@@ -51,9 +51,9 @@
           <div>
             <div class="icon">
               <i class="fas fa-archive"></i>
-              <span class="total">{{cat.count}}</span>          
+              <span class="total">0</span>          
             </div>
-            <div><h3 class="title">{{cat.name}}</h3></div>
+            <div><h3 class="title">loading..</h3></div>
           </div>
         </a>
       </div> 
@@ -62,23 +62,27 @@
           <div>
             <div class="icon">
               <i class="fas fa-archive"></i>
-              <span class="total">{{cat.count}}</span>          
+              <span class="total">0</span>          
             </div>
-            <div><h3 class="title">{{cat.name}}</h3></div>
+            <div><h3 class="title">loading..</h3></div>
           </div>
         </a>
       </div>
     </div>
-    <div class="col-6 col-md-4 col-lg-2 item-mb" *ngFor="let cat of categories | async">
-      <a class="card text-center" routerLink="/view/category/{{cat.id}}/{{cat.name | replaceURL | lowercase}}">
-        <div>
-          <div class="icon">
-            <i class="fas fa-archive"></i>
-            <span class="total">{{cat.count}}</span>          
+    <ng-container *ngIf="!loading">
+      <div class="col-6 col-md-4 col-lg-2 item-mb" *ngFor="let cat of categories">
+        <a class="card text-center" routerLink="/view/category/{{cat.id}}/{{cat.name | replaceURL | lowercase}}">
+          <div>
+            <div class="icon">
+              <i class="fas fa-archive"></i>
+              <span class="total">{{cat.count}}</span>
+            </div>
+            <div>
+              <h3 class="title">{{cat.name}}</h3>
+            </div>
           </div>
-          <div><h3 class="title">{{cat.name}}</h3></div>
-        </div>
-      </a> 
-    </div>
+        </a>
+      </div>
+    </ng-container>
   </div>
 </div>

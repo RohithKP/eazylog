@@ -1,7 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { BusinessService } from "./../../../core/services/business.service";
 
 @Component({
   selector: 'side-bar',
@@ -22,10 +19,7 @@ export class SideBarComponent implements OnInit {
  @Input() isLoading: boolean;
  public id: string
 
-  constructor(
-    private businessService:BusinessService,
-    private route: ActivatedRoute
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
   }

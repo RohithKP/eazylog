@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { BusinessService } from "./../../../core/services/business.service";
 
 @Component({
@@ -17,6 +16,14 @@ export class ViewComponent implements OnInit {
 
   constructor( private businessService:BusinessService ) { }
 
+  ngOnInit() {
+    this.businessService.getAll().subscribe( item => {
+      this.items = item;
+      this.isLoading = false;
+      this.onScrollDown(); 
+    })  
+  }
+
   setDisplayMode(mode: number) {
     this.displayMode = mode
   }
@@ -28,19 +35,6 @@ export class ViewComponent implements OnInit {
         this.count++;
       }
     }
-  }
-
-  ngOnInit() {
-    this.businessService.getAll().subscribe( item => {
-      this.items = item;
-    })  
-    if(this.items.length > 0) {
-      this.isLoading = true;
-    }
-    for(let i=0; i<6; i++) {
-      this.tempItems[i] = this.items[this.count]
-      this.count++;
-    }  
   }
 
 }

@@ -16,9 +16,8 @@ export class CategoriesComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getAll().subscribe( data => {
       this.categories = data
-    });
-    if(this.categories.length > 0) {
       this.loading = false;
-    }
+    });
+
   }
 }

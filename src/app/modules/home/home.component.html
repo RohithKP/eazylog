@@ -15,8 +15,8 @@
           <a (click)="getGeoLocation()"><i class="fa fa-map-marker-alt"></i></a>
         </div>
         <div class="main-search-input-item">
-          <input name="categorys" [(ngModel)]="category" [typeahead]="cat" [typeaheadOptionsLimit]="7"
-            [typeaheadMinLength]="0" placeholder="All Categories" class="form-control" autocomplete="off">
+          <input name="categorys" [(ngModel)]="category" [typeahead]="categories" [typeaheadOptionsLimit]="7"
+            [typeaheadMinLength]="0" placeholder="All Categories" class="form-control" typeaheadOptionField="name" autocomplete="off">
         </div>
         <a routerLink="/search?s={{keyword}}&cat={{category}}&location={{location}}">
           <button class="main-search-button">Search</button>        

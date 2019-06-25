@@ -15,10 +15,9 @@ import { CategoryService } from "./../../core/services/category.service";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   private geocoder: any;
-  public keyword: string = 'keyword';
-  public location: string = 'location';
-  public category: string = 'category';
-  public items: Observable<any[]>;
+  public keyword: string; 
+  public location: string;
+  public category: string;
   public categories: any;
   public cat = [];
   public states: string[];
@@ -47,9 +46,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.categoryService.getAll().subscribe( item => {
       this.categories = item;
     });
-    this.categories.forEach( item => {
-      this.cat.push(item.name)
-    })
   }
   ngAfterViewInit(): void {
     this.geocoder = new google.maps.Geocoder();

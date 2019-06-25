@@ -48,19 +48,32 @@
     </div>
   </section>
   <section class="side-bar__address">
-    <div class="title"><i class="fas fa-address-book"></i>Address</div>
-    <div class="info">
-      <div class="item">{{ item.address.addressLine1 }}</div>
-      <div class="item">{{ item.address.addressLine2 }}</div>
-      <div class="item">{{ item.address.city }}</div>
-      <div class="item">{{ item.address.state }}</div>
-      <div class="item">{{ item.address.zip }}</div>
-    </div>
-    <div class="loader" *ngIf="isLoading">
-      <div class="lds-ellipsis">
-        <div></div><div></div><div></div><div></div>
+      <div *ngIf="!isLoading">
+        <div class="title"><i class="fas fa-address-book"></i>Address</div>
+        <div class="info">
+          <div class="item">{{ item.address.addressLine1 }}</div>
+          <div class="item">{{ item.address.addressLine2 }}</div>
+          <div class="item">{{ item.address.city }}</div>
+          <div class="item">{{ item.address.state }}</div>
+          <div class="item">{{ item.address.zip }}</div>
+        </div>
+        <div class="loader" *ngIf="isLoading">
+          <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="loader" *ngIf="isLoading">
+        <div class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
   </section>
   <section class="side-bar__map">
     <div class="mapouter" *ngIf="!isLoading">
@@ -85,14 +98,21 @@
     </div>
   </section>
   <section class="side-bar__menu">
-    <div class="tags">
-      <div class="title"><i class="fas fa-tags"></i>Tags</div>
-      <a routerLink="/view/tag/{{tag}}" *ngFor="let tag of item.tags" class="tag">{{ tag }}</a>
+    <div *ngIf="!isLoading">
+      <div class="tags">
+        <div class="title"><i class="fas fa-tags"></i>Tags</div>
+        <a routerLink="/view/tag/{{tag}}" *ngFor="let tag of item.tags" class="tag">{{ tag }}</a>
+      </div>
+      <ul>
+        <li class="report-bussiness"><a routerLink="/report">Report this bussiness</a></li>
+        <li class="claim-bussiness"><a routerLink="/report">Claim this bussiness</a></li>
+      </ul>
     </div>
-    <ul>
-      <li class="report-bussiness"><a routerLink="/report">Report this bussiness</a></li>
-      <li class="claim-bussiness"><a routerLink="/report">Claim this bussiness</a></li>
-    </ul>
+    <div class="loader" *ngIf="isLoading">
+      <div class="lds-ellipsis">
+        <div></div><div></div><div></div><div></div>
+      </div>
+    </div>
   </section>
   <section class="side-bar__locations">
     <div class="locations">

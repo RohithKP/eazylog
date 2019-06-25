@@ -1,7 +1,7 @@
 <div id="list-item" class="container">
   <h2 class="header-title text-center">Recents</h2>
   <div class="row featured-wrapper" *ngIf="!loading">
-    <div class="col-md-3 col-sm-6 col-12 item-mb" *ngFor="let cat of recent | async; let i =index">
+    <div class="col-md-3 col-sm-6 col-12 item-mb" *ngFor="let cat of recent; let i =index">
       <a class="card" *ngIf="i <= 7" routerLink="/view-details/{{cat._id}}/{{cat.name | replaceURL | lowercase}}">
         <div class="card-image">
           <img img-preloader="{{cat.imgUrl}}" />

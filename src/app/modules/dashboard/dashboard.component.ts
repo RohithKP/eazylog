@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  public username: string;
   public activeTab = 1;
   public bussinessForm: FormGroup;
   public profileForm: FormGroup;
@@ -44,4 +44,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  public onSubmit() {
+    
+  }
 }
